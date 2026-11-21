@@ -66,6 +66,7 @@ var readers = []*Reader{
 	mobaXtermReader,
 	sshConfigReader,
 	tableReader,
+	finallyshellReader,
 }
 
 // Reader is what the import window knows of a source.
@@ -135,10 +136,13 @@ type Entry struct {
 	// Note is what the window says of the entry, a setting of the source
 	// that is not imported: "" for none.
 	Note Note
-	// Password is the host's password, from a list of servers that has
-	// them (CSV): Import does not put it in the host; the app keeps it
-	// in the system's credential store.
+	// Password is the host's password (or key passphrase), from a list of
+	// servers or a Finallyshell export that includes them: Import does not
+	// put it in the host; the app keeps it in the system's credential store.
 	Password string
+	// ProxyPassword is the password of the host's SOCKS5 or HTTP proxy,
+	// when exported with secrets: kept in the credential store on import.
+	ProxyPassword string
 	// Jump is the entry of the same source this one connects through, as
 	// a jump host (OpenSSH's ProxyJump): nil for none. Import makes the
 	// host of that entry, imported or present already, the host's jump

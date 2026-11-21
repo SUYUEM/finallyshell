@@ -1681,5 +1681,58 @@
   "exitFullScreen": "Exit full screen",
   "terminalSyntaxHighlight": "Syntax highlighting",
   "optionSyntaxHighlight": "Highlight keywords in terminal output",
-  "optionSyntaxHighlightNote": "Automatically colors IPs, URLs, and success, warning, error and info keywords in uncolored terminal output (as MobaXterm does). Skips colored output and full-screen programs such as vim and htop."
+  "optionSyntaxHighlightNote": "Automatically colors IPs, URLs, and success, warning, error and info keywords in uncolored terminal output (as MobaXterm does). Skips colored output and full-screen programs such as vim and htop.",
+  "export": "Export",
+  "exportTitle": "Export all sessions",
+  "exportSessions": "Export",
+  "exportSaveTitle": "Export Finallyshell sessions",
+  "exportAction": "Export…",
+  "exportSummary": "{hosts, plural, one {# connection} other {# connections}} and {folders, plural, one {# folder} other {# folders}} will be exported to a Finallyshell JSON file.",
+  "@exportSummary": {
+    "placeholders": {
+      "hosts": {
+        "type": "int"
+      },
+      "folders": {
+        "type": "int"
+      }
+    }
+  },
+  "exportSummaryNoFolders": "{hosts, plural, one {# connection} other {# connections}} will be exported to a Finallyshell JSON file.",
+  "@exportSummaryNoFolders": {
+    "placeholders": {
+      "hosts": {
+        "type": "int"
+      }
+    }
+  },
+  "exportEmpty": "There are no connections to export.",
+  "exportIncludePasswords": "Include saved passwords (stored in plain text)",
+  "exportPasswordsNote": "Passwords are excluded by default. Check the option above if you want to restore logins directly on another computer.",
+  "exportPasswordsWarning": "Warning: Passwords, key passphrases and proxy passwords will be written in plain text. Keep the exported file safe and do not share it.",
+  "exporting": "Exporting…",
+  "exportDone": "Exported {count, plural, one {# connection} other {# connections}} to {path}",
+  "@exportDone": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "exportFailed": "Could not export sessions: {error}",
+  "@exportFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importSourceFinallyshell": "Finallyshell backup (JSON)",
+  "chooseFinallyshellFile": "Choose a Finallyshell export file",
+  "finallyshellFileTypes": "Finallyshell sessions",
+  "finallyshellNotFound": "Choose a JSON file exported from Finallyshell (or hosts.json) to restore all hosts, folders, proxies and tunnels.",
+  "finallyshellNote": "Folders, proxies, jump hosts, tunnels, notes and any exported passwords are imported automatically."
 }

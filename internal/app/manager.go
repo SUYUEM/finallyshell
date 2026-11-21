@@ -30,7 +30,7 @@ const WindowManager WindowKind = "manager"
 var managerSpec = WindowSpec{
 	Kind:  WindowManager,
 	Title: locales.ManagerTitle,
-	Width: 900, Height: 640,
+	Width: 960, Height: 640,
 	MinWidth: 680, MinHeight: 420,
 }
 
@@ -320,6 +320,7 @@ func (a *App) managerView(c *ui.Context) {
 	}
 	a.managerPromptView(c, m)
 	a.managerQuestionView(c, m)
+	a.exportDialog(c, WindowManager)
 }
 
 func (a *App) managerToolbar(c *ui.Context) {
@@ -360,6 +361,9 @@ func (a *App) managerToolbar(c *ui.Context) {
 			if toolText("import", locales.ImportTitle(), locales.Import()).Clicked() {
 				a.openImport()
 			}
+			if toolText("export", locales.ExportTitle(), locales.Export()).Clicked() {
+				a.openExport(WindowManager)
+			}
 		}).Label(locales.ManagerTitle()).Grow(1).MinWidth(0)
 		ui.Checkbox(c, &m.showDeleted, locales.ShowDeleted())
 		labels, ids := []string{locales.FilterAll()}, []string{""}
@@ -374,10 +378,10 @@ func (a *App) managerToolbar(c *ui.Context) {
 				chosen = label
 			}
 		}
-		if ui.Select(c, &chosen, labels).Label(locales.FolderFilter()).Width(150).Changed() {
+		if ui.Select(c, &chosen, labels).Label(locales.FolderFilter()).Width(130).Changed() {
 			m.filter = ids[max(slices.Index(labels, chosen), 0)]
 		}
-		search := ui.SearchField(c, &m.query).Placeholder(locales.SearchHosts()).Label(locales.SearchHosts()).Width(220)
+		search := ui.SearchField(c, &m.query).Placeholder(locales.SearchHosts()).Label(locales.SearchHosts()).Width(190)
 		if search.Changed() {
 			a.searchChanged(m)
 		}
@@ -675,6 +679,13 @@ func (a *App) newItemsMenu(e ui.Element, m *managerState, folder string, later *
 		}
 		if menu.Item(locales.NewFolder()).Chosen() {
 			*later = append(*later, func() { a.newFolderIn(m, folder) })
+		}
+		menu.Separator()
+		if menu.Item(locales.ImportTitle()).Chosen() {
+			*later = append(*later, func() { a.openImport() })
+		}
+		if menu.Item(locales.ExportTitle()).Disabled(len(a.hosts.Live()) == 0).Chosen() {
+			*later = append(*later, func() { a.openExport(m.win) })
 		}
 	})
 }

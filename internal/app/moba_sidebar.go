@@ -145,6 +145,9 @@ func (a *App) sidebarConnections(c *ui.Context) {
 		if headerButton(c, "import", locales.ImportTitle()).Clicked() {
 			a.openImport()
 		}
+		if headerButton(c, "export", locales.ExportTitle()).Clicked() {
+			a.openExport(WindowMain)
+		}
 		if headerButton(c, "external-link", locales.ConnectionManager()).Clicked() {
 			a.openManager()
 		}

@@ -60,7 +60,7 @@ func (a *App) terminalLive() bool {
 // (such as the find bar, focused command bar, or a modal dialog) should
 // consume Escape before Escape exits full screen.
 func (a *App) fullScreenEscBusy() bool {
-	if a.pwOpen || a.replace != nil || a.fileDlg != nil || a.sendTo.ask != nil || a.pendingHostKey() != nil {
+	if a.pwOpen || a.replace != nil || a.fileDlg != nil || a.sendTo.ask != nil || a.exp != nil || a.pendingHostKey() != nil {
 		return true
 	}
 	s := a.current()

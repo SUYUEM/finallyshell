@@ -214,6 +214,7 @@ type App struct {
 	// allImportSources() unless tests replace them, and the kind of the
 	// one chosen last, "" for the first.
 	imp           *importState
+	exp           *exportState
 	importSources []importSource
 	importKind    importer.Kind
 

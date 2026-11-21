@@ -41,6 +41,9 @@ func (a *App) topToolbar(c *ui.Context) {
 		if toolbarButton(c, "import", locales.ImportSessions(), locales.ImportTitle(), false, false, false, 0).Clicked() {
 			a.openImport()
 		}
+		if toolbarButton(c, "export", locales.ExportSessions(), locales.ExportTitle(), false, false, false, 0).Clicked() {
+			a.openExport(WindowMain)
+		}
 
 		toolbarSep(c)
 

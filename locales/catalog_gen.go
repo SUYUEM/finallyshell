@@ -10231,3 +10231,195 @@ func OptionSyntaxHighlightNote() string { return In(i18n.Locale()).OptionSyntaxH
 func (msgs Messages) OptionSyntaxHighlightNote() string {
 	return Catalog.Format(msgs.locale, "optionSyntaxHighlightNote", nil)
 }
+
+// Export says "Export"
+// in the language the app shows.
+func Export() string { return In(i18n.Locale()).Export() }
+
+// Export says "Export"
+// in the language of msgs.
+func (msgs Messages) Export() string {
+	return Catalog.Format(msgs.locale, "export", nil)
+}
+
+// ExportTitle says "Export all sessions"
+// in the language the app shows.
+func ExportTitle() string { return In(i18n.Locale()).ExportTitle() }
+
+// ExportTitle says "Export all sessions"
+// in the language of msgs.
+func (msgs Messages) ExportTitle() string {
+	return Catalog.Format(msgs.locale, "exportTitle", nil)
+}
+
+// ExportSessions says "Export"
+// in the language the app shows.
+func ExportSessions() string { return In(i18n.Locale()).ExportSessions() }
+
+// ExportSessions says "Export"
+// in the language of msgs.
+func (msgs Messages) ExportSessions() string {
+	return Catalog.Format(msgs.locale, "exportSessions", nil)
+}
+
+// ExportSaveTitle says "Export Finallyshell sessions"
+// in the language the app shows.
+func ExportSaveTitle() string { return In(i18n.Locale()).ExportSaveTitle() }
+
+// ExportSaveTitle says "Export Finallyshell sessions"
+// in the language of msgs.
+func (msgs Messages) ExportSaveTitle() string {
+	return Catalog.Format(msgs.locale, "exportSaveTitle", nil)
+}
+
+// ExportAction says "Export…"
+// in the language the app shows.
+func ExportAction() string { return In(i18n.Locale()).ExportAction() }
+
+// ExportAction says "Export…"
+// in the language of msgs.
+func (msgs Messages) ExportAction() string {
+	return Catalog.Format(msgs.locale, "exportAction", nil)
+}
+
+// ExportSummary says "{hosts, plural, one {# connection} other {# connections}} and {folders, plural, one {# folder} other {# folders}} wil…"
+// in the language the app shows.
+func ExportSummary(hosts int, folders int) string {
+	return In(i18n.Locale()).ExportSummary(hosts, folders)
+}
+
+// ExportSummary says "{hosts, plural, one {# connection} other {# connections}} and {folders, plural, one {# folder} other {# folders}} wil…"
+// in the language of msgs.
+func (msgs Messages) ExportSummary(hosts int, folders int) string {
+	return Catalog.Format(msgs.locale, "exportSummary", map[string]any{"hosts": hosts, "folders": folders})
+}
+
+// ExportSummaryNoFolders says "{hosts, plural, one {# connection} other {# connections}} will be exported to a Finallyshell JSON file."
+// in the language the app shows.
+func ExportSummaryNoFolders(hosts int) string { return In(i18n.Locale()).ExportSummaryNoFolders(hosts) }
+
+// ExportSummaryNoFolders says "{hosts, plural, one {# connection} other {# connections}} will be exported to a Finallyshell JSON file."
+// in the language of msgs.
+func (msgs Messages) ExportSummaryNoFolders(hosts int) string {
+	return Catalog.Format(msgs.locale, "exportSummaryNoFolders", map[string]any{"hosts": hosts})
+}
+
+// ExportEmpty says "There are no connections to export."
+// in the language the app shows.
+func ExportEmpty() string { return In(i18n.Locale()).ExportEmpty() }
+
+// ExportEmpty says "There are no connections to export."
+// in the language of msgs.
+func (msgs Messages) ExportEmpty() string {
+	return Catalog.Format(msgs.locale, "exportEmpty", nil)
+}
+
+// ExportIncludePasswords says "Include saved passwords (stored in plain text)"
+// in the language the app shows.
+func ExportIncludePasswords() string { return In(i18n.Locale()).ExportIncludePasswords() }
+
+// ExportIncludePasswords says "Include saved passwords (stored in plain text)"
+// in the language of msgs.
+func (msgs Messages) ExportIncludePasswords() string {
+	return Catalog.Format(msgs.locale, "exportIncludePasswords", nil)
+}
+
+// ExportPasswordsNote says "Passwords are excluded by default. Check the option above if you want to restore logins directly on another computer."
+// in the language the app shows.
+func ExportPasswordsNote() string { return In(i18n.Locale()).ExportPasswordsNote() }
+
+// ExportPasswordsNote says "Passwords are excluded by default. Check the option above if you want to restore logins directly on another computer."
+// in the language of msgs.
+func (msgs Messages) ExportPasswordsNote() string {
+	return Catalog.Format(msgs.locale, "exportPasswordsNote", nil)
+}
+
+// ExportPasswordsWarning says "Warning: Passwords, key passphrases and proxy passwords will be written in plain text. Keep the exported file safe an…"
+// in the language the app shows.
+func ExportPasswordsWarning() string { return In(i18n.Locale()).ExportPasswordsWarning() }
+
+// ExportPasswordsWarning says "Warning: Passwords, key passphrases and proxy passwords will be written in plain text. Keep the exported file safe an…"
+// in the language of msgs.
+func (msgs Messages) ExportPasswordsWarning() string {
+	return Catalog.Format(msgs.locale, "exportPasswordsWarning", nil)
+}
+
+// Exporting says "Exporting…"
+// in the language the app shows.
+func Exporting() string { return In(i18n.Locale()).Exporting() }
+
+// Exporting says "Exporting…"
+// in the language of msgs.
+func (msgs Messages) Exporting() string {
+	return Catalog.Format(msgs.locale, "exporting", nil)
+}
+
+// ExportDone says "Exported {count, plural, one {# connection} other {# connections}} to {path}"
+// in the language the app shows.
+func ExportDone(count int, path string) string { return In(i18n.Locale()).ExportDone(count, path) }
+
+// ExportDone says "Exported {count, plural, one {# connection} other {# connections}} to {path}"
+// in the language of msgs.
+func (msgs Messages) ExportDone(count int, path string) string {
+	return Catalog.Format(msgs.locale, "exportDone", map[string]any{"count": count, "path": path})
+}
+
+// ExportFailed says "Could not export sessions: {error}"
+// in the language the app shows.
+func ExportFailed(error string) string { return In(i18n.Locale()).ExportFailed(error) }
+
+// ExportFailed says "Could not export sessions: {error}"
+// in the language of msgs.
+func (msgs Messages) ExportFailed(error string) string {
+	return Catalog.Format(msgs.locale, "exportFailed", map[string]any{"error": error})
+}
+
+// ImportSourceFinallyshell says "Finallyshell backup (JSON)"
+// in the language the app shows.
+func ImportSourceFinallyshell() string { return In(i18n.Locale()).ImportSourceFinallyshell() }
+
+// ImportSourceFinallyshell says "Finallyshell backup (JSON)"
+// in the language of msgs.
+func (msgs Messages) ImportSourceFinallyshell() string {
+	return Catalog.Format(msgs.locale, "importSourceFinallyshell", nil)
+}
+
+// ChooseFinallyshellFile says "Choose a Finallyshell export file"
+// in the language the app shows.
+func ChooseFinallyshellFile() string { return In(i18n.Locale()).ChooseFinallyshellFile() }
+
+// ChooseFinallyshellFile says "Choose a Finallyshell export file"
+// in the language of msgs.
+func (msgs Messages) ChooseFinallyshellFile() string {
+	return Catalog.Format(msgs.locale, "chooseFinallyshellFile", nil)
+}
+
+// FinallyshellFileTypes says "Finallyshell sessions"
+// in the language the app shows.
+func FinallyshellFileTypes() string { return In(i18n.Locale()).FinallyshellFileTypes() }
+
+// FinallyshellFileTypes says "Finallyshell sessions"
+// in the language of msgs.
+func (msgs Messages) FinallyshellFileTypes() string {
+	return Catalog.Format(msgs.locale, "finallyshellFileTypes", nil)
+}
+
+// FinallyshellNotFound says "Choose a JSON file exported from Finallyshell (or hosts.json) to restore all hosts, folders, proxies and tunnels."
+// in the language the app shows.
+func FinallyshellNotFound() string { return In(i18n.Locale()).FinallyshellNotFound() }
+
+// FinallyshellNotFound says "Choose a JSON file exported from Finallyshell (or hosts.json) to restore all hosts, folders, proxies and tunnels."
+// in the language of msgs.
+func (msgs Messages) FinallyshellNotFound() string {
+	return Catalog.Format(msgs.locale, "finallyshellNotFound", nil)
+}
+
+// FinallyshellNote says "Folders, proxies, jump hosts, tunnels, notes and any exported passwords are imported automatically."
+// in the language the app shows.
+func FinallyshellNote() string { return In(i18n.Locale()).FinallyshellNote() }
+
+// FinallyshellNote says "Folders, proxies, jump hosts, tunnels, notes and any exported passwords are imported automatically."
+// in the language of msgs.
+func (msgs Messages) FinallyshellNote() string {
+	return Catalog.Format(msgs.locale, "finallyshellNote", nil)
+}

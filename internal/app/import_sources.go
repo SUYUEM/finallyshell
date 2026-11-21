@@ -85,6 +85,13 @@ var importTexts = map[importer.Kind]importText{
 		errorText: tableErrorText,
 		template:  tableTemplate,
 	},
+	importer.Finallyshell: {
+		name:      locales.ImportSourceFinallyshell,
+		choose:    locales.ChooseFinallyshellFile,
+		fileTypes: locales.FinallyshellFileTypes,
+		notFound:  locales.FinallyshellNotFound,
+		note:      locales.FinallyshellNote,
+	},
 }
 
 // sshConfigPath is where ssh reads its user's config on goos, as its

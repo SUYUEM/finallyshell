@@ -548,12 +548,19 @@ func (a *App) importChosen(st *importState, statuses []importStatus) {
 		if h.Auth == config.AuthKey && h.KeyPath == "" {
 			keys++
 		}
-		// A list's password, as the editor keeps a remembered one.
-		if e := entryOf(entries, h); e != nil && e.Password != "" && h.Auth == config.AuthPassword {
-			a.keepLogin(h, e.Password, true, false)
+		// A list's or Finallyshell backup's password, as the editor keeps a remembered one.
+		if e := entryOf(entries, h); e != nil {
+			if e.Password != "" && (h.Auth == config.AuthPassword || h.Auth == config.AuthKey) {
+				a.keepLogin(h, e.Password, true, false)
+			}
+			if e.ProxyPassword != "" && usesProxyPassword(h) {
+				a.proxySecrets()[proxySecretKey(h.ID)] = e.ProxyPassword
+				a.keepProxySecret(h, true, false)
+			}
 		}
 		for _, f := range a.hosts.FolderPath(h.Folder) {
 			m.tree.Open.Add(managerItem{folder: f.ID})
+			a.connTree.tree.Open.Add(managerItem{folder: f.ID})
 		}
 	}
 	if m.query != "" {
@@ -562,6 +569,7 @@ func (a *App) importChosen(st *importState, statuses []importStatus) {
 	}
 	if len(added) > 0 {
 		m.reveal(managerItem{host: added[0].ID})
+		a.connTree.reveal(managerItem{host: added[0].ID})
 	}
 	m.notice = func() string {
 		s := locales.ImportResult(imported, skipped, failed)
