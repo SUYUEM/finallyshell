@@ -560,9 +560,9 @@ func (a *App) shortcuts(c *ui.Context) {
 		a.swapPane(cur, paneUp)
 	case split && pressed(scMovePaneDown):
 		a.swapPane(cur, paneDown)
-	case a.fullScreen.on && !a.terminalLive() && c.Shortcut(0, ui.KeyEscape):
-		// Esc is the shell's while it runs, as vi's; it leaves full screen
-		// where no shell takes it.
+	case a.fullScreen.on && !a.fullScreenEscBusy() && c.Shortcut(0, ui.KeyEscape):
+		// Esc exits full screen directly unless a find bar, command bar, or
+		// modal dialog is currently open and should close first.
 		a.setFullScreen(false)
 	}
 	if k := a.shortcut(scSwitchTab); !k.none() {

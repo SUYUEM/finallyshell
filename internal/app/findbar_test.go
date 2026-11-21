@@ -4,8 +4,6 @@ import (
 	"strings"
 	"testing"
 
-	"finallyshell/locales"
-
 	"github.com/egoist/mygo/plugins/terminal"
 	"github.com/egoist/mygo/ui"
 )
@@ -139,11 +137,14 @@ func TestFindBar(t *testing.T) {
 	}
 }
 
-// Full screen shows the terminal alone, in the system's full screen; the
-// key leaves it, and Escape too where no shell runs.
+// Full screen shows the terminal alone, in the system's full screen; both
+// the shortcut and Escape leave it (with Escape closing an open find bar
+// first before leaving full screen).
 func TestFullScreen(t *testing.T) {
 	a, p, s, conn, tt := findTerm(t)
-	panes := []string{"Sessions (2)", locales.TabFiles(), "IP 45.56.78.90"}
+	a.setLeftPage(leftMonitor)
+	tt.Frame()
+	panes := []string{"Sessions (2)", "IP 45.56.78.90"}
 	for _, x := range panes {
 		if !tt.HasText(x) {
 			t.Fatalf("no %q before full screen", x)
@@ -159,21 +160,46 @@ func TestFullScreen(t *testing.T) {
 			t.Errorf("%q shows in full screen", x)
 		}
 	}
+	saveShot(t, tt, "fullscreen-en.png")
+
+	// With the find bar open in full screen, the first Escape closes the find
+	// bar while keeping full screen; the next Escape exits full screen.
+	a.openFind()
+	tt.Frame()
+	tt.Key(0, ui.KeyEscape)
+	tt.Frame()
+	if s.findOpen() || !a.fullScreen.on {
+		t.Fatalf("1st Escape with find open: findOpen %v, fullScreen %v", s.findOpen(), a.fullScreen.on)
+	}
 	tt.ClickAt(640, 300)
 	conn.sent(t, s.term())
 	tt.Key(0, ui.KeyEscape)
-	if got := conn.sent(t, s.term()); got != "\x1b" || !a.fullScreen.on {
-		t.Errorf("Escape over the shell: sent %q, full screen %v", got, a.fullScreen.on)
-	}
-	saveShot(t, tt, "fullscreen-en.png")
-	tt.Key(fullScreen.Mods, fullScreen.Key)
+	tt.Frame()
 	if a.fullScreen.on || p.full {
-		t.Fatalf("still full screen %v, window %v", a.fullScreen.on, p.full)
+		t.Fatalf("Escape did not exit full screen: app %v, window %v", a.fullScreen.on, p.full)
 	}
 	for _, x := range panes {
 		if !tt.HasText(x) {
 			t.Errorf("no %q after full screen", x)
 		}
+	}
+
+	// Outside full screen, Escape goes straight to the shell as usual.
+	tt.ClickAt(640, 300)
+	conn.sent(t, s.term())
+	tt.Key(0, ui.KeyEscape)
+	if got := conn.sent(t, s.term()); got != "\x1b" {
+		t.Errorf("Escape outside full screen: sent %q", got)
+	}
+
+	// The full screen shortcut still toggles full screen on and off.
+	tt.Key(fullScreen.Mods, fullScreen.Key)
+	if !a.fullScreen.on || !p.full {
+		t.Fatalf("re-enter full screen: app %v, window %v", a.fullScreen.on, p.full)
+	}
+	tt.Key(fullScreen.Mods, fullScreen.Key)
+	if a.fullScreen.on || p.full {
+		t.Fatalf("still full screen %v, window %v", a.fullScreen.on, p.full)
 	}
 
 	// On a new tab, Escape leaves.

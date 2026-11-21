@@ -19,7 +19,7 @@ type fullScreener interface {
 }
 
 // setFullScreen enters the app's full screen or leaves it. The key of
-// full screen does both; Escape leaves too where no shell takes it.
+// full screen does both; Escape leaves too unless an overlay takes it.
 func (a *App) setFullScreen(on bool) {
 	f := &a.fullScreen
 	if f.on == on {
@@ -54,4 +54,18 @@ func (a *App) WindowLeftFullScreen() {
 func (a *App) terminalLive() bool {
 	s := a.current()
 	return s != nil && !s.isNewTab() && s.status == statusConnected && s.term() != nil
+}
+
+// fullScreenEscBusy reports whether an overlay or input inside full screen
+// (such as the find bar, focused command bar, or a modal dialog) should
+// consume Escape before Escape exits full screen.
+func (a *App) fullScreenEscBusy() bool {
+	if a.pwOpen || a.replace != nil || a.fileDlg != nil || a.sendTo.ask != nil || a.pendingHostKey() != nil {
+		return true
+	}
+	s := a.current()
+	if s == nil {
+		return false
+	}
+	return s.findOpen() || s.bar.focused || s.bar.popup != popupNone
 }

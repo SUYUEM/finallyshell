@@ -226,15 +226,14 @@ func TestTerminalKeysReachShell(t *testing.T) {
 	tt.Frame()
 	press(keyCase{"Ctrl+C after the find bar", ui.Ctrl, ui.KeyC, "\x03"})
 
-	// In full screen the shell keeps its keys, Escape too.
+	// In full screen the shell keeps its keys, while Escape exits full screen.
 	action(scFullScreen, func() bool { return a.fullScreen.on })
 	focus()
 	press(keyCase{"Ctrl+C in full screen", ui.Ctrl, ui.KeyC, "\x03"})
-	press(keyCase{"Esc in full screen", 0, ui.KeyEscape, "\x1b"})
-	if !a.fullScreen.on {
-		t.Error("Escape left full screen over a shell")
+	tt.Key(0, ui.KeyEscape)
+	if got := conn.sent(t, term); got != "" || a.fullScreen.on {
+		t.Errorf("Escape in full screen: sent %q, fullScreen %v", got, a.fullScreen.on)
 	}
-	action(scFullScreen, func() bool { return !a.fullScreen.on })
 	focus()
 
 	action(scNextTab, func() bool { return a.current() == other })
