@@ -1,0 +1,1685 @@
+{
+  "@@locale": "en",
+  "appTitle": "Finallyshell",
+  "notConnected": "Not connected",
+  "copy": "Copy",
+  "readingServerInfo": "Reading server info…",
+  "uptimeDays": "{days, plural, one {Up # day} other {Up # days}}",
+  "@uptimeDays": {
+    "placeholders": {
+      "days": {
+        "type": "int"
+      }
+    }
+  },
+  "uptimeUnknown": "Up -",
+  "monitorOff": "Server monitor is off for this host",
+  "systemInfo": "System info",
+  "sysHostname": "Hostname",
+  "sysOS": "OS",
+  "sysKernel": "Kernel",
+  "sysArch": "Architecture",
+  "sysCPU": "CPU",
+  "sysCores": "{count, plural, one {# core} other {# cores}}",
+  "@sysCores": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sysCoresThreads": "{cores, plural, one {# core} other {# cores}}, {threads, plural, one {# thread} other {# threads}}",
+  "@sysCoresThreads": {
+    "description": "Physical cores and logical processors of the server's CPU.",
+    "placeholders": {
+      "cores": {
+        "type": "int"
+      },
+      "threads": {
+        "type": "int"
+      }
+    }
+  },
+  "sysMemory": "Memory",
+  "sysUptime": "Uptime",
+  "sysUptimeValue": "{days, plural, =0 {{time}} one {# day, {time}} other {# days, {time}}}",
+  "@sysUptimeValue": {
+    "description": "How long the server has been up; time is hours:minutes, as 3:07.",
+    "placeholders": {
+      "days": {
+        "type": "int"
+      },
+      "time": {
+        "type": "String",
+        "example": "3:07"
+      }
+    }
+  },
+  "sysAddresses": "IP addresses",
+  "sysDisks": "Disks",
+  "sysInfoFailed": "Could not read system info: {error}",
+  "sysInfoTimeout": "The server took too long to answer",
+  "sysInfoNoShell": "The server has no POSIX shell (sh) to run the query",
+  "sysInfoOff": "The server monitor is turned off for this host, so no system info is read.",
+  "retry": "Retry",
+  "loadAverage": "Load {load}",
+  "cpu": "CPU",
+  "memory": "Mem",
+  "@memory": {
+    "description": "Short label beside the memory bar; about 4 characters."
+  },
+  "swap": "Swap",
+  "command": "Command",
+  "latency": "Latency",
+  "monitorPartUptime": "Uptime and load",
+  "monitorPartCpu": "CPU, memory, swap",
+  "monitorPartProcesses": "Processes",
+  "monitorPartNetwork": "Network",
+  "monitorPartLatency": "Latency",
+  "monitorPartDisks": "Disks",
+  "monitorPartsHint": "Right-click to choose what shows",
+  "netIfaces": "Network interfaces",
+  "netIfaceAutomatic": "Automatic (busiest)",
+  "netIfaceAuto": "Auto",
+  "netIfaceFallback": "{iface} (auto)",
+  "netIfacesMissing": "Not on this server: {names}. Showing the busiest interface.",
+  "netIfacesPartlyMissing": "Not on this server: {names}",
+  "netIfaceNotFound": "not found",
+  "diskPath": "Path",
+  "diskFreeSize": "Free/Size",
+  "sessionsTitle": "Sessions ({count})",
+  "@sessionsTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "newConnection": "New connection",
+  "noSessions": "No open sessions",
+  "leftPanelPages": "Sessions or connections",
+  "connectionsPage": "Connections",
+  "searchConnections": "Search connections",
+  "connTreeEmpty": "No connections yet. Click + to add one.",
+  "deleteHostBody": "It moves to the deleted connections, which “Show deleted” in the connection manager lists to restore.",
+  "scSwitchLeftPanel": "Switch sessions / connections",
+  "reconnect": "Reconnect",
+  "duplicateSession": "Duplicate session",
+  "resetName": "Reset name",
+  "disconnect": "Disconnect",
+  "close": "Close",
+  "closeSession": "Close session",
+  "statusConnecting": "Connecting…",
+  "statusFailed": "Connection failed",
+  "statusDisconnected": "Disconnected",
+  "statusConnected": "Connected",
+  "connectionLost": "Connection lost",
+  "connectingTo": "Connecting to {target}",
+  "welcomeHint": "{key} opens the connection manager",
+  "newTab": "New tab",
+  "quickConnect": "Quick connect",
+  "searchHosts": "Search name, host, user or notes",
+  "hostColName": "Name",
+  "hostColHost": "Host",
+  "hostColUser": "User",
+  "recentHosts": "Recent",
+  "otherHosts": "Other connections",
+  "noMatchingHosts": "No connections match the search.",
+  "clearRecents": "Clear",
+  "connectionManager": "Connection manager",
+  "noHostsTitle": "No connections yet",
+  "noHostsBody": "Add a server, or import your connections from FinalShell, Xshell and other clients in the connection manager.",
+  "followSystem": "System language",
+  "tabFiles": "Files",
+  "tabTransfers": "Transfers",
+  "tabTransfersActive": "Transfers ({count})",
+  "@tabTransfersActive": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "colName": "Name",
+  "colSize": "Size",
+  "colType": "Type",
+  "colModified": "Modified",
+  "colPermissions": "Permissions",
+  "colOwner": "Owner/Group",
+  "kindFolder": "Folder",
+  "kindLink": "Link",
+  "kindBrokenLink": "Broken link",
+  "kindFile": "File",
+  "kindExtFile": "{ext} file",
+  "parentFolder": "Parent folder",
+  "refresh": "Refresh",
+  "homeFolder": "Home folder",
+  "followTerminalDir": "Follow the terminal's folder",
+  "copyPath": "Copy path",
+  "sftpUnavailable": "SFTP unavailable: {error}",
+  "cannotOpenFolder": "Cannot open {dir}: {error}",
+  "uploadFiles": "Upload files…",
+  "uploadFolder": "Upload folder…",
+  "download": "Download",
+  "downloadTo": "Download to…",
+  "dropToUpload": "Drop to upload to {dir}",
+  "chooseDownloadFolder": "Choose where to download",
+  "chooseUploadFiles": "Choose files to upload",
+  "chooseUploadFolder": "Choose a folder to upload",
+  "transfersEmpty": "No transfers yet. Drop files on the file list to upload them.",
+  "clearFinished": "Clear finished",
+  "transferWaiting": "Waiting",
+  "transferDone": "Done",
+  "transferCanceled": "Canceled",
+  "transferFailed": "Failed: {error}",
+  "transferProgress": "{done} of {total}, {speed}/s",
+  "cancel": "Cancel",
+  "showInFolder": "Show in folder",
+  "replaceTitle": "Replace existing items?",
+  "replaceBody": "{count, plural, one {# item with the same name already exists in {dir}.} other {# items with the same names already exist in {dir}.}}",
+  "@replaceBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      },
+      "dir": {
+        "type": "String"
+      }
+    }
+  },
+  "replace": "Replace",
+  "uploadDirection": "Upload",
+  "downloadDirection": "Download",
+  "uploadAsArchive": "Upload as archive…",
+  "downloadAsArchive": "Download as archive",
+  "chooseArchiveUpload": "Choose folders to upload as an archive",
+  "uploadArchiveDirection": "Upload as archive",
+  "downloadArchiveDirection": "Download as archive",
+  "archiveItems": "{name} and {count} more",
+  "@archiveItems": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archivePacking": "Packing {file}",
+  "archiveUnpacking": "Unpacking {file}",
+  "retryOverSftp": "Retry over SFTP",
+  "archiveLinksOutside": "{count, plural, one {# link was not created: it points outside the folder} other {# links were not created: they point outside the folder}}",
+  "@archiveLinksOutside": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveLinksNotAllowed": "{count, plural, one {# link was not created: Windows allows links only in Developer Mode or for administrators} other {# links were not created: Windows allows links only in Developer Mode or for administrators}}",
+  "@archiveLinksNotAllowed": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "archiveWindowsName": "{name} is not a valid file name on Windows",
+  "archiveNoShell": "No SSH connection to run tar over",
+  "archiveDamaged": "The archive arrived damaged ({error}): the files unpacked from it may be wrong. Download it again.",
+  "managerTitle": "Connections",
+  "newHost": "New",
+  "edit": "Edit",
+  "delete": "Delete",
+  "connect": "Connect",
+  "editConnection": "Edit connection",
+  "fieldName": "Name",
+  "fieldNamePlaceholder": "Optional, e.g. Production",
+  "fieldHost": "Host",
+  "fieldHostPlaceholder": "IP address or domain",
+  "fieldPort": "Port",
+  "fieldUser": "User",
+  "fieldAuth": "Method",
+  "authPassword": "Password",
+  "authKey": "Private key",
+  "fieldKeyFile": "Private key",
+  "fieldPassphrase": "Passphrase",
+  "passphrasePlaceholder": "Leave empty if none",
+  "fieldPassword": "Password",
+  "rememberPassword": "Remember password",
+  "rememberPassphrase": "Remember passphrase",
+  "secretStoredNote": "Saved in the system's credential store ({store}), never in hosts.json.",
+  "@secretStoredNote": {
+    "placeholders": {
+      "store": {
+        "type": "String"
+      }
+    }
+  },
+  "secretMemoryNote": "Kept in memory only: enter it again after restarting.",
+  "secretsUnavailable": "The system's credential store ({store}) is not available: passwords are kept in memory only.",
+  "@secretsUnavailable": {
+    "placeholders": {
+      "store": {
+        "type": "String"
+      }
+    }
+  },
+  "storeKeychain": "Keychain",
+  "storeCredentialManager": "Credential Manager",
+  "storeSecretService": "Secret Service",
+  "errHostRequired": "Enter the host",
+  "errUserRequired": "Enter the user",
+  "errPortInvalid": "Enter a port from 1 to 65535",
+  "errKeyFileRequired": "Choose the private key",
+  "errSaveFailed": "Could not save: {error}",
+  "ok": "OK",
+  "editorPageSSH": "SSH connection",
+  "editorPageTerminal": "Terminal",
+  "editorPageProxy": "Proxy",
+  "editorPageTunnels": "Tunnels",
+  "sectionGeneral": "General",
+  "sectionAuth": "Authentication",
+  "sectionAdvanced": "Advanced",
+  "fieldNotes": "Notes",
+  "browse": "Browse…",
+  "chooseKeyFile": "Choose a private key",
+  "monitorChannel": "Enable exec channel (server monitor)",
+  "monitorChannelHint": "Turn it off for jump hosts that disconnect when another channel opens.",
+  "fieldTermType": "Terminal type",
+  "fieldEncoding": "Character encoding",
+  "encodingHint": "The encoding the server's programs read and write, its locale. If text shows garbled, try GBK, GB18030 or Big5.",
+  "fieldBackspace": "Backspace sends",
+  "fieldDelete": "Delete sends",
+  "terminalNextConnect": "Changes apply the next time the host connects.",
+  "errTermTypeInvalid": "Use letters, digits and - . + _ only",
+  "fieldProxyType": "Type",
+  "proxyNone": "None",
+  "proxyJumpHost": "Jump host",
+  "proxyNoneHint": "Connect to the host directly.",
+  "proxySOCKS5Hint": "The proxy looks up the host's name, so it can be a name only the proxy's network knows.",
+  "proxyHTTPHint": "Uses HTTP CONNECT. The proxy must allow connections to the host's SSH port.",
+  "proxyJumpHint": "Logs in to another saved connection first and connects to this host from there, like ssh -J. The jump host can have its own proxy or jump host.",
+  "proxyUserPlaceholder": "Leave empty if the proxy needs none",
+  "fieldJumpHost": "Jump host",
+  "noJumpHosts": "There is no other saved connection to use as the jump host.",
+  "jumpHostNote": "Its host key, login and password are its own, as when connecting to it.",
+  "errJumpHostRequired": "Choose the jump host",
+  "errJumpLoop": "The jump hosts form a loop: {hosts}",
+  "errJumpHostMissing": "The jump host of {host} was deleted",
+  "errViaProxy": "Proxy {proxy}: {error}",
+  "errViaJump": "Jump host {host}: {error}",
+  "errProxyAuth": "Authentication failed: wrong proxy user or password",
+  "errProxyRefused": "Connection refused: no proxy on that port",
+  "errCannotReach": "Cannot connect to {addr}: {reason}",
+  "errForwardProhibited": "Cannot connect to {addr}: the jump host does not allow TCP forwarding (AllowTcpForwarding)",
+  "jumpHostPasswordTitle": "Jump host password",
+  "proxyPasswordTitle": "Proxy password",
+  "passwordOnTheWay": "Needed to connect to {host}",
+  "tunnelsIntro": "Ports forwarded through this host's connection. Enabled tunnels start when a session to it connects, and stop when it disconnects.",
+  "colTunnelType": "Type",
+  "colTunnelListen": "Listen on",
+  "colTunnelTarget": "Forward to",
+  "colTunnelEnabled": "Enabled",
+  "colTunnelStatus": "Status",
+  "colTunnelConnections": "Connections",
+  "colTunnelTraffic": "Traffic",
+  "tunnelKindLocal": "Local (-L)",
+  "tunnelKindRemote": "Remote (-R)",
+  "tunnelKindDynamic": "Dynamic (-D)",
+  "tunnelSocks": "SOCKS5 proxy",
+  "tunnelsEmpty": "No tunnels. Add one to forward a port.",
+  "tunnelAdd": "Add…",
+  "tunnelEdit": "Edit…",
+  "tunnelRemove": "Remove",
+  "tunnelNew": "New tunnel",
+  "tunnelChange": "Edit tunnel",
+  "fieldTunnelType": "Type",
+  "tunnelHintLocal": "Programs on this computer connect to the listening port; the server opens the connection to the target.",
+  "tunnelHintRemote": "Programs on the server connect to the listening port there; this computer opens the connection to the target.",
+  "tunnelHintDynamic": "Programs on this computer use the port as a SOCKS5 proxy; the server opens the connections they ask for.",
+  "fieldListenPort": "Listen port",
+  "fieldListenAddr": "Listen address",
+  "tunnelOtherHosts": "Let other computers connect",
+  "tunnelLoopbackNote": "Listens on 127.0.0.1: only this computer can connect.",
+  "tunnelLoopbackNoteRemote": "Listens on the server's 127.0.0.1: only the server itself can connect.",
+  "tunnelPublicWarnLocal": "Anyone who can reach this computer on this port can use the tunnel, without logging in.",
+  "tunnelPublicWarnRemote": "Anyone who can reach the server on this port can connect through it to the target. The server must also allow it (GatewayPorts).",
+  "fieldTargetHost": "Target host",
+  "fieldTargetPort": "Target port",
+  "targetHostPlaceholderLocal": "As the server reaches it, e.g. 127.0.0.1",
+  "targetHostPlaceholderRemote": "As this computer reaches it, e.g. 127.0.0.1",
+  "tunnelStartWithSession": "Start with the session",
+  "errTargetHostRequired": "Enter the target host",
+  "errListenAddrInvalid": "Enter an IP address or a host name",
+  "errRemoteListenAddrIP": "Enter an IP address, such as 0.0.0.0 or ::, or localhost: a host name would be looked up on this computer, not on the server",
+  "errTunnelRemoteHostName": "The server listens on an IP address, not the host name in {addr}: change it to an IP address, or localhost",
+  "errTunnelDuplicate": "Another tunnel already listens on this port",
+  "tabTunnels": "Tunnels",
+  "tabTunnelsActive": "Tunnels ({count})",
+  "@tabTunnelsActive": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "tabProcesses": "Processes",
+  "openProcesses": "Open the process manager",
+  "colPID": "PID",
+  "colProcUser": "User",
+  "colProcMemory": "Memory",
+  "colProcCPU": "CPU %",
+  "colProcName": "Name",
+  "colProcCommand": "Command line",
+  "colProcPath": "Path",
+  "procFilter": "Filter by name, command line or user",
+  "procCount": "{count, plural, one {# process} other {# processes}}",
+  "@procCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "procCountFiltered": "{shown} of {count, plural, one {# process} other {# processes}}",
+  "@procCountFiltered": {
+    "placeholders": {
+      "shown": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "procReading": "Reading processes…",
+  "procOnlyLinux": "Only Linux servers are supported",
+  "procListFailed": "Could not list the processes: {error}",
+  "procCopyPID": "Copy PID",
+  "procCopyCommand": "Copy Command Line",
+  "procOpenDetails": "Open Details",
+  "procSendSignal": "Send Signal",
+  "procKill": "Kill…",
+  "sigTERM": "Asks the process to quit.",
+  "sigKILL": "Ends the process at once; it cannot clean up.",
+  "sigHUP": "Hangs up; many daemons reload their configuration.",
+  "sigINT": "Interrupts the process, as Ctrl+C does.",
+  "sigSTOP": "Pauses the process until it gets SIGCONT.",
+  "sigCONT": "Resumes a paused process.",
+  "signalTitle": "Send {signal} to {name} ({pid})?",
+  "signalSend": "Send",
+  "killTitle": "Kill {name} ({pid})?",
+  "killBody": "This sends SIGTERM, which asks the process to quit. If it is still running after {seconds} seconds, you can force it with SIGKILL.",
+  "@killBody": {
+    "placeholders": {
+      "seconds": {
+        "type": "int"
+      }
+    }
+  },
+  "procKillButton": "Kill",
+  "killWaiting": "Waiting for the process to quit…",
+  "killStillTitle": "{name} ({pid}) is still running",
+  "killStillBody": "It did not quit after SIGTERM. Force it to quit with SIGKILL? It cannot clean up.",
+  "forceKill": "Force Kill",
+  "signalRefused": "The server refused: {error}",
+  "signalFailed": "Could not send the signal: {error}",
+  "procAlreadyEnded": "The process has already ended. No signal was sent.",
+  "procGone": "Process {pid} is no longer running.",
+  "procDetailsFailed": "Could not read the details: {error}",
+  "procCwd": "Working directory",
+  "procNeedsRoot": "Needs root",
+  "procEnvironment": "Environment",
+  "envName": "Name",
+  "envValue": "Value",
+  "envCopyValue": "Copy Value",
+  "envCopyPair": "Copy NAME=value",
+  "envCopyAll": "Copy All",
+  "tunnelStarting": "Starting…",
+  "tunnelListening": "Listening",
+  "tunnelStopped": "Stopped",
+  "tunnelConnectionsCount": "{active} open, {total} in all",
+  "@tunnelConnectionsCount": {
+    "placeholders": {
+      "active": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "tunnelTraffic": "↑ {up}  ↓ {down}",
+  "tunnelDialFailed": "Last connection failed: {error}",
+  "tunnelStart": "Start",
+  "tunnelStop": "Stop",
+  "tunnelsNone": "This host has no tunnels.",
+  "tunnelsOffline": "Tunnels start when the session connects.",
+  "tunnelsConfigure": "Edit tunnels…",
+  "errTunnelInUse": "Port {addr} is already in use",
+  "errTunnelRemoteDenied": "The server did not listen on {addr}: the port is in use there, or forwarding is not allowed",
+  "errTunnelListen": "Could not listen on {addr}: {error}",
+  "errTunnelUnknown": "This version does not support this kind of tunnel",
+  "errTunnelLost": "Stopped: the connection to the server closed",
+  "errTunnelStopped": "Stopped: {error}",
+  "keySeqDEL": "ASCII DEL (^?)",
+  "keySeqCtrlH": "Control-H (^H)",
+  "errHostDeleted": "This connection was deleted",
+  "enterPassword": "Enter password",
+  "hostKeyTitle": "First connection to this host",
+  "hostKeyBody": "The identity of {host} cannot be verified. Check that this fingerprint matches the server's before trusting it.",
+  "reject": "Reject",
+  "trustAndConnect": "Trust and connect",
+  "errHostKeyChanged": "The host key does not match the saved one ({fingerprint}). Someone may be intercepting the connection. If the server was reinstalled, remove its old entry from {file}.",
+  "errHostKeyRejected": "The host key was rejected",
+  "errHostKeyTimeout": "Timed out waiting for the host key to be confirmed",
+  "errReadKey": "Could not read the private key: {error}",
+  "errParseKey": "Could not parse the private key: {error}",
+  "errNeedPassphrase": "The private key is protected: enter its passphrase",
+  "errWrongPassphrase": "Wrong passphrase for the private key",
+  "enterPassphrase": "Enter the key's passphrase",
+  "errNoAuth": "No way to log in: enter a password or a key",
+  "errAuthFailed": "Authentication failed: wrong user, password or key",
+  "errRefused": "Connection refused: no SSH service on that port",
+  "errTimeout": "Connection timed out: check the address, port and network",
+  "errNoSuchHost": "Host not found: the name does not resolve",
+  "errOpenShell": "Could not open a shell: {error}",
+  "errTerminal": "Could not start the terminal: {error}",
+  "lookAppliesNow": "Changes apply to every open terminal at once.",
+  "lookPreview": "Preview",
+  "lookRestoreDefaults": "Restore defaults",
+  "fontFamily": "Font family",
+  "fontFamilyPlaceholder": "Default coding fonts",
+  "fontFamilyHint": "Installed monospaced fonts are suggested as you type. Several, separated by commas, are tried in order.",
+  "fontSize": "Size",
+  "fontLineHeight": "Line height",
+  "fontLineHeightHint": "A multiple of the font's own line height.",
+  "fontWeight": "Weight",
+  "fontWeightHint": "Bold text is drawn heavier than this.",
+  "fontWeightLight": "Light",
+  "fontWeightRegular": "Regular",
+  "fontWeightMedium": "Medium",
+  "fontWeightSemibold": "Semibold",
+  "fontWeightBold": "Bold",
+  "fontLigatures": "Ligatures",
+  "fontLigaturesHint": "Draws pairs such as -> and != as one glyph, in fonts that have ligatures.",
+  "searchThemes": "Search color schemes",
+  "noMatchingThemes": "No color scheme matches.",
+  "themeDefault": "Default",
+  "themesSource": "The color schemes that Ghostty ships, and your own in Ghostty's themes folder.",
+  "backgroundImage": "Image",
+  "backgroundNone": "None",
+  "chooseImage": "Choose…",
+  "removeImage": "Remove",
+  "chooseImageTitle": "Choose a background image",
+  "imageFiles": "Images",
+  "backgroundFit": "Fit",
+  "backgroundCover": "Cover",
+  "backgroundContain": "Contain",
+  "backgroundTile": "Tile",
+  "backgroundOpacity": "Opacity",
+  "backgroundOpacityHint": "How much of the image shows through the color scheme's background, which keeps text readable.",
+  "backgroundCopyNote": "Finallyshell keeps a copy of the image in its settings folder, so moving or deleting the original changes nothing. Remove deletes the copy.",
+  "errImageRead": "Could not read the image: {error}",
+  "errImageFormat": "Finallyshell cannot show this file: choose a PNG, JPEG, GIF, WebP or BMP image.",
+  "errImageTooLarge": "The image is too large: the limit is {size} and {megapixels} million pixels.",
+  "@errImageTooLarge": {
+    "placeholders": {
+      "megapixels": {
+        "type": "int"
+      }
+    }
+  },
+  "errImageMissing": "The background image is missing: choose it again, or remove it.",
+  "errImageSave": "Could not copy the image: {error}",
+  "done": "Done",
+  "settingsLanguage": "Language",
+  "optionsAppearance": "Appearance",
+  "appearanceSystem": "System",
+  "appearanceLight": "Light",
+  "appearanceDark": "Dark",
+  "appearanceNote": "System follows your computer's light or dark appearance. The terminal keeps its own color scheme (Terminal › Color scheme).",
+  "options": "Options",
+  "optionsGeneral": "General",
+  "optionsTerminal": "Terminal",
+  "optionsMouse": "Mouse",
+  "optionsShortcuts": "Shortcuts",
+  "optionsColorScheme": "Color scheme",
+  "optionsBackground": "Background image",
+  "optionsFont": "Font",
+  "optionsComingLater": "These options are coming in a later version.",
+  "optionsTabsAndWindow": "Tabs and window",
+  "optionAutoSelectTab": "Select new tabs automatically",
+  "optionMinimizeToTray": "Minimize to tray when closed",
+  "optionConfirmClose": "Confirm before closing the window",
+  "optionConfirmCloseNote": "Asks only while sessions are connected or connecting.",
+  "optionsConnections": "Connections",
+  "optionKeepAliveBefore": "Send a keepalive every",
+  "optionKeepAliveAfter": "seconds",
+  "optionKeepAliveLabel": "Seconds between keepalives",
+  "optionKeepAliveNote": "Keeps quiet connections from being dropped by routers, firewalls and proxies. When three in a row get no answer, the session shows “Connection lost”. 0 turns keepalives off. Applies to connections made after the change.",
+  "mouseSelection": "Selection",
+  "optionCopyOnSelect": "Copy on select",
+  "optionCopyOnSelectNote": "Text you select with the mouse is copied to the clipboard.",
+  "mouseRightClick": "Right click",
+  "rightClickMenu": "Show the context menu",
+  "rightClickPaste": "Paste",
+  "rightClickCopy": "Copy the selection",
+  "rightClickCopyOrPaste": "Copy if text is selected, else paste",
+  "rightClickIgnore": "Do nothing",
+  "mouseNextConnect": "Open sessions pick up a change when they reconnect.",
+  "mouseLinks": "Links",
+  "optionOpenLinks": "{key}+click opens links",
+  "optionOpenLinksNote": "Web addresses in the terminal open in the browser. Open sessions pick up a change when they reconnect.",
+  "mouseScrolling": "Scrolling",
+  "optionWheelLines": "Lines per mouse wheel notch",
+  "optionWheelLinesWindows": "On Windows, 3 means the lines set in the system mouse settings; other values scale from it.",
+  "optionsCommandBar": "Command bar",
+  "cmdBarLabel": "Command bar",
+  "cmdBarCommands": "Commands",
+  "cmdBarHistory": "History",
+  "cmdBarNoMatches": "No matches",
+  "cmdBarControlName": "This name has control characters and can't be inserted",
+  "cmdBarPickHint": "Arrows choose, Enter or Tab inserts",
+  "cmdBarHistoryHint": "←/→ picks a word, Enter inserts",
+  "cmdBarClearList": "Clear list",
+  "cmdBarMore": "{count, plural, one {and # more} other {and # more}}",
+  "@cmdBarMore": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "cmdBarNoSFTP": "The server's files can't be read: SFTP isn't available.",
+  "cmdBarNoCommands": "Couldn't list the server's commands.",
+  "cmdBarPopups": "Popups",
+  "cmdBarKeys": "Keys",
+  "cmdBarKeyEnter": "Sends the line to the shell",
+  "cmdBarKeyTab": "Completes a path, or the command name in the first word",
+  "cmdBarKeyHistory": "Opens the history list",
+  "cmdBarKeyFields": "In the history list: picks one word of the command",
+  "cmdBarKeyEsc": "Closes the list, then goes back to the terminal",
+  "cmdBarKeyFocus": "Moves the keyboard to the bar and back (Terminal › Shortcuts)",
+  "optionShowCommandBar": "Show the command bar under the terminal",
+  "optionShowCommandBarNote": "A line under the terminal for typing commands, as FinalShell's command input box, with completion and history.",
+  "optionCmdBarPaths": "Path picker",
+  "optionCmdBarPathsNote": "Lists the server's folder for the path being typed, in columns.",
+  "optionCmdBarHistory": "History picker",
+  "optionCmdBarHistoryNote": "Lists the commands sent before; the bar keeps those it sends for each host.",
+  "optionCmdBarCommands": "Command completion",
+  "optionCmdBarCommandsNote": "Lists the commands on the server's PATH for the first word, read once per connection.",
+  "optionServerHistory": "Read the server's shell history",
+  "optionServerHistoryNote": "Adds the commands in ~/.bash_history and ~/.zsh_history to the history picker, read over SFTP once per connection.",
+  "clearAllHistory": "Clear history of all hosts…",
+  "clearAllHistoryNote": "The history is kept in the history folder of the settings folder, one file per host. The servers' own history files are not changed.",
+  "clearAllHistoryTitle": "Clear the command history of all hosts?",
+  "clearAllHistoryDetail": "The commands kept from the command bar are deleted. This can't be undone.",
+  "clearAllHistoryYes": "Clear history",
+  "keySeqVT220": "VT220 (ESC [3~)",
+  "keySeqDefault": "Default: {value}",
+  "keySequencesNote": "Hosts set to \"Default\" in their connection settings use these. Changes apply the next time a session connects.",
+  "terminalSessionTabs": "Session tabs",
+  "optionAgentIcons": "Show the coding agent running in each tab",
+  "optionAgentIconsNote": "While Claude Code, Codex, Gemini CLI or another coding agent runs in a session's shell, its logo shows next to the tab's name. The app reads the server's /proc over an exec channel to tell, so it needs a Linux server whose host has the exec channel on.",
+  "confirmQuitTitle": "Quit Finallyshell?",
+  "confirmQuitBody": "{count, plural, one {# session is open. Quitting disconnects it.} other {# sessions are open. Quitting disconnects them.}}",
+  "@confirmQuitBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "confirmQuitOK": "Quit",
+  "confirmQuitUnsaved": "{count, plural, one {# file in the editor has unsaved changes. Quitting discards them.} other {# files in the editor have unsaved changes. Quitting discards them.}}",
+  "@confirmQuitUnsaved": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "fileEditor": "Editor",
+  "save": "Save",
+  "saveAll": "Save All",
+  "dontSave": "Don't Save",
+  "undo": "Undo",
+  "redo": "Redo",
+  "find": "Find",
+  "overwrite": "Overwrite",
+  "editorReplace": "Replace",
+  "editorGoToLine": "Go to line",
+  "editorSoftWrap": "Soft wrap",
+  "editorReload": "Reload",
+  "editorReloadFromServer": "Reload from the server",
+  "editorReading": "Reading {name}…",
+  "editorProgress": "{done} of {total}",
+  "editorTooLarge": "{name} is {size}",
+  "editorTooLargeBody": "The editor reads a file into memory: one over {limit} takes a while to open and edit.",
+  "editorOpenAnyway": "Open Anyway",
+  "editorBinary": "{name} looks like a binary file",
+  "editorBinaryBody": "The editor opens text files only.",
+  "editorOpenWithApp": "Open with the Default App",
+  "editorOpeningWithApp": "Downloading to open it…",
+  "editorOpenedWithApp": "Opened a copy: {path}",
+  "editorOpenWithAppFailed": "Cannot open it: {error}",
+  "editorCannotOpen": "Cannot open {name}: {error}",
+  "editorPermissionDenied": "permission denied",
+  "editorNoSuchFile": "the file does not exist",
+  "editorDisconnected": "Not connected to {host}. Your changes are kept, and you can save them once the session reconnects.",
+  "editorNotConnected": "Not connected",
+  "editorNotUTF8": "This file is not valid UTF-8. It may be in GB18030 (or GBK).",
+  "editorReopenAs": "Reopen as {encoding}",
+  "editorSaving": "Saving…",
+  "editorSaved": "Saved",
+  "editorSaveFailed": "Cannot save: {error}",
+  "editorCannotEncode": "{encoding} has no “{char}” (line {line})",
+  "@editorCannotEncode": {
+    "placeholders": {
+      "line": {
+        "type": "int"
+      }
+    }
+  },
+  "editorPlainText": "Plain Text",
+  "editorLanguage": "Language",
+  "editorLineCol": "Ln {line}, Col {col}",
+  "@editorLineCol": {
+    "placeholders": {
+      "line": {
+        "type": "int"
+      },
+      "col": {
+        "type": "int"
+      }
+    }
+  },
+  "editorEncoding": "Encoding",
+  "editorLineEndings": "Line endings",
+  "editorUnsavedTitle": "Save the changes to {name}?",
+  "editorUnsavedFiles": "{count, plural, one {Save the changes to # file?} other {Save the changes to # files?}}",
+  "@editorUnsavedFiles": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "editorUnsavedBody": "Your changes are lost if you don't save them.",
+  "editorConflict": "{name} changed on the server",
+  "editorConflictGone": "{name} was removed from the server",
+  "editorConflictBody": "It changed after you opened it. Overwrite it with your text, or reload it from the server? Undo brings your text back after a reload.",
+  "trayShow": "Show Finallyshell",
+  "trayQuit": "Quit",
+  "optionsUpdates": "Updates",
+  "updatesVersion": "Current version: {version}",
+  "@updatesVersion": {
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "example": "0.3.0"
+      }
+    }
+  },
+  "updatesVersionDevelopment": "Current version: development build",
+  "checkForUpdates": "Check for Updates…",
+  "updatesAvailable": "Version {version} is available",
+  "@updatesAvailable": {
+    "placeholders": {
+      "version": {
+        "type": "String",
+        "example": "0.3.0"
+      }
+    }
+  },
+  "optionCheckUpdatesAutomatically": "Check for updates automatically",
+  "updatesDevelopment": "Development builds don't update themselves.",
+  "updatesManaged": "This copy can't update itself where it is installed. If a package manager installed it (the .deb package), update it there, or download the new version from the releases page.",
+  "updatesReleasesPage": "Releases page",
+  "scTerminalCopy": "Terminal: copy",
+  "scTerminalPaste": "Terminal: paste",
+  "scTerminalFind": "Terminal: find",
+  "scTerminalFullScreen": "Terminal: full screen",
+  "scTerminalReconnect": "Terminal: reconnect",
+  "scPreviousTab": "Previous tab",
+  "scNextTab": "Next tab",
+  "scCloseTab": "Close tab",
+  "scSwitchTab": "Switch to tab 1–9",
+  "scFocusCommandBar": "Focus command bar",
+  "shortcutColAction": "Action",
+  "shortcutColKey": "Key",
+  "shortcutColDefault": "Default",
+  "shortcutNone": "None",
+  "shortcutChange": "Change…",
+  "shortcutReset": "Reset",
+  "shortcutResetAll": "Reset all",
+  "shortcutsNote": "New keys for copy and paste, and Option as Alt, apply to sessions connected from now on.",
+  "optionAsAlt": "Use Option as Alt (Meta)",
+  "optionAsAltNote": "Option+B then sends Esc b, which moves back a word in the shell, instead of typing ∫.",
+  "shortcutCaptureTitle": "Change shortcut: {action}",
+  "shortcutCapturePrompt": "Press the new key combination.",
+  "shortcutCaptureDigits": "Press a digit with the modifiers to use, as Alt+1.",
+  "shortcutCaptureWaiting": "Waiting for a key…",
+  "shortcutUseDefault": "Use default",
+  "shortcutPlain": "The shell needs this key. Use it with {mods}.",
+  "shortcutShellCtrl": "The shell needs Ctrl with this key, as Ctrl+C, Ctrl+R and Ctrl+W. Add Shift.",
+  "shortcutShellAlt": "Alt with this key is Meta in the shell, as Alt+B and Alt+F move by words.",
+  "shortcutOption": "Option with this key types a character, or is Meta in the shell with Option as Alt.",
+  "shortcutAltGr": "Ctrl+Alt with this key is AltGr, which types characters on many Windows keyboard layouts.",
+  "shortcutSystem": "The system uses this key.",
+  "shortcutDigits": "Press a digit from 1 to 9.",
+  "shortcutConflict": "“{action}” uses this key; it will have none.",
+  "shortcutTerminalKey": "The terminal uses this key too (select all, zoom, scroll, or copy and paste with Insert); the shortcut takes it.",
+  "proxyLater": "Connecting through a proxy is coming in a later version.",
+  "newFolder": "New folder",
+  "newSubfolder": "New subfolder",
+  "collapseAll": "Collapse all",
+  "expandAll": "Expand all",
+  "showDeleted": "Show deleted",
+  "folderFilter": "Folder",
+  "filterAll": "All",
+  "hostColPort": "Port",
+  "hostColNotes": "Notes",
+  "closeAfterConnect": "Close window after connecting",
+  "duplicate": "Duplicate",
+  "rename": "Rename",
+  "moveToFolder": "Move to folder",
+  "topLevel": "Top level",
+  "copyHost": "Copy host",
+  "restore": "Restore",
+  "deleteForever": "Delete permanently",
+  "copyOfName": "{name} (copy)",
+  "@copyOfName": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "folderName": "Name",
+  "renameFolder": "Rename folder",
+  "renameConnection": "Rename connection",
+  "deleteFolderTitle": "Delete the folder “{name}”?",
+  "@deleteFolderTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteFolderBody": "Its connections and folders move to “{parent}”.",
+  "@deleteFolderBody": {
+    "placeholders": {
+      "parent": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteFolderBodyTop": "Its connections and folders move to the top level.",
+  "connectAll": "Connect all",
+  "connectAllTitle": "{count, plural, one {Connect to # server?} other {Connect to # servers?}}",
+  "@connectAllTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "connectAllBody": "Every connection in “{folder}” and its subfolders opens in a tab of its own.",
+  "@connectAllBody": {
+    "placeholders": {
+      "folder": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteForeverTitle": "Delete “{name}” permanently?",
+  "@deleteForeverTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteForeverBody": "It cannot be restored afterwards.",
+  "managerEmpty": "No connections yet. Click New connection to add one.",
+  "deletedAt": "Deleted {when}",
+  "@deletedAt": {
+    "placeholders": {
+      "when": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteHostTitle": "Delete “{name}”?",
+  "@deleteHostTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "jumpHostInUse": "It is the jump host of {hosts}, which cannot connect until it is restored.",
+  "@jumpHostInUse": {
+    "placeholders": {
+      "hosts": {
+        "type": "String"
+      }
+    }
+  },
+  "jumpHostInUseForever": "It is the jump host of {hosts}, which cannot connect without it.",
+  "@jumpHostInUseForever": {
+    "placeholders": {
+      "hosts": {
+        "type": "String"
+      }
+    }
+  },
+  "listSeparator": ", ",
+  "import": "Import",
+  "importTitle": "Import connections",
+  "importFrom": "Import from",
+  "importSourceFinalShell": "FinalShell",
+  "chooseFinalShellFolder": "Choose FinalShell's data folder",
+  "chooseFolder": "Choose folder…",
+  "chooseFile": "Choose file…",
+  "problemLine": "{file}: {reason}",
+  "@problemLine": {
+    "description": "A file not imported from, and why.",
+    "placeholders": {
+      "file": {
+        "type": "String"
+      },
+      "reason": {
+        "type": "String"
+      }
+    }
+  },
+  "importLooking": "Looking for connections…",
+  "finalShellNotFound": "FinalShell's data folder was not found. Choose the folder FinalShell keeps its data in, the one with a conn folder in it, or a folder exported from FinalShell.",
+  "importSourceXshell": "Xshell",
+  "chooseXshellFolder": "Choose Xshell's Sessions folder",
+  "xshellNotFound": "Xshell's sessions were not found. Choose the Sessions folder Xshell keeps them in, under Documents\\NetSarang Computer, or a folder with .xsh session files or an .xts export in it.",
+  "importSourceSecureCRT": "SecureCRT",
+  "chooseSecureCRTFolder": "Choose SecureCRT's config folder",
+  "secureCRTNotFound": "SecureCRT's config folder was not found. Choose the folder SecureCRT keeps its settings in, the one with a Sessions folder in it (SecureCRT shows it in Options › Global Options › General › Configuration Paths), or its Sessions folder.",
+  "importSourceMobaXterm": "MobaXterm",
+  "chooseMobaXtermFile": "Choose MobaXterm.ini or exported sessions",
+  "mobaXtermFileTypes": "MobaXterm sessions",
+  "mobaXtermNotFound": "MobaXterm.ini was not found. Choose MobaXterm.ini (in %APPDATA%\\MobaXterm for the installed version, next to MobaXterm.exe for the portable one), or a file of sessions exported from MobaXterm (.mxtsessions or .moba).",
+  "importNoConnections": "No connections found in {path}.",
+  "@importNoConnections": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "importReadFailed": "Could not read it: {error}",
+  "@importReadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "importPasswordsNote": "Passwords are not imported, as {source} encrypts them: each is asked for at the first connection.",
+  "@importPasswordsNote": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "importColFolder": "Folder",
+  "importColStatus": "Note",
+  "selectAll": "Select all",
+  "selectNone": "Select none",
+  "importChosen": "{chosen} of {total} selected",
+  "@importChosen": {
+    "placeholders": {
+      "chosen": {
+        "type": "int"
+      },
+      "total": {
+        "type": "int"
+      }
+    }
+  },
+  "importCount": "{count, plural, =0 {Import} one {Import #} other {Import #}}",
+  "@importCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importPresent": "Already present as “{name}”",
+  "@importPresent": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "importSameAs": "Same host as “{name}” above",
+  "@importSameAs": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "importNeedsKey": "Choose the key file after importing",
+  "importNoProxy": "Proxy not imported",
+  "importNothing": "No SSH connections to import.",
+  "importProblems": "Not imported: {failed} failed, {skipped} skipped",
+  "@importProblems": {
+    "placeholders": {
+      "failed": {
+        "type": "int"
+      },
+      "skipped": {
+        "type": "int"
+      }
+    }
+  },
+  "problemBroken": "not a valid connection file",
+  "problemUnreadable": "could not be read",
+  "problemTooLarge": "too large for a connection file",
+  "problemTooManyFiles": "too many files: this one and those after it were not read",
+  "problemNoHost": "no host address",
+  "problemNotSSH": "not an SSH connection, skipped",
+  "problemDeleted": "deleted in {source}, skipped",
+  "@problemDeleted": {
+    "placeholders": {
+      "source": {
+        "type": "String"
+      }
+    }
+  },
+  "importResult": "Imported {imported, plural, one {# connection} other {# connections}}, skipped {skipped}, failed {failed}.",
+  "@importResult": {
+    "placeholders": {
+      "imported": {
+        "type": "int"
+      },
+      "skipped": {
+        "type": "int"
+      },
+      "failed": {
+        "type": "int"
+      }
+    }
+  },
+  "importKeysNote": "{count, plural, one {# uses a private key: edit it to choose the key file.} other {# use a private key: edit them to choose the key files.}}",
+  "@importKeysNote": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "importSourceSSHConfig": "SSH config",
+  "chooseSSHConfigFile": "Choose an SSH config file",
+  "importSSHConfigNotFound": "{path} was not found. Choose an SSH config file, OpenSSH's client configuration with Host lines.",
+  "@importSSHConfigNotFound": {
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "importSSHConfigNote": "An SSH config has no passwords: each is asked for at the first connection. Hosts with an IdentityFile log in with that key.",
+  "problemSSHMatch": "Match is not supported, skipped",
+  "problemSSHPatterns": "patterns only, not a host: its settings go to the hosts it matches",
+  "problemSSHPort": "the port is not a number from 1 to 65535",
+  "problemSSHLine": "not a valid line",
+  "problemSSHIncludeLimit": "Include goes past 16 levels or 256 files, not read",
+  "importNoJumpHost": "Jump host not imported",
+  "importSSHKeyTokens": "Key path not fully expanded",
+  "importJumpHost": "Jump host: {name}",
+  "@importJumpHost": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "importSourceTable": "CSV or Excel file",
+  "chooseTableFile": "Choose a server list (CSV or Excel)",
+  "tableFileTypes": "CSV and Excel files",
+  "tableNotFound": "Choose a CSV or Excel (.xlsx) file with a header row. Only a Host column is needed; Name, Port, User, Password, Private key, Folder and Notes are read too. “Save template…” writes an example to fill in.",
+  "tableNote": "Passwords in the list go into the system keychain, not into the connections file.",
+  "importColPassword": "Password",
+  "saveTemplate": "Save template…",
+  "saveTemplateTitle": "Save a server list template",
+  "csvFiles": "CSV files",
+  "templateSaved": "Saved {path}",
+  "@templateSaved": {
+    "description": "The server list template was saved to path.",
+    "placeholders": {
+      "path": {
+        "type": "String"
+      }
+    }
+  },
+  "templateSaveFailed": "Could not save the template: {error}",
+  "@templateSaveFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "tableColName": "Name",
+  "@tableColName": {
+    "description": "A header of the server list template; must be one the import reads (importer.ColumnOf)."
+  },
+  "tableColHost": "Host",
+  "tableColPort": "Port",
+  "tableColUser": "User",
+  "tableColPassword": "Password",
+  "tableColKey": "Private key",
+  "tableColFolder": "Folder",
+  "tableColNotes": "Notes",
+  "tableExampleName": "Example server",
+  "tableExampleFolder": "Examples/Web",
+  "tableExampleNotes": "Replace this row with your servers",
+  "tableNoHostColumn": "This list has no Host column. Its headers are: {headers}. Name the column of addresses Host, IP or Address (or 主机, 地址, IP地址).",
+  "@tableNoHostColumn": {
+    "placeholders": {
+      "headers": {
+        "type": "String"
+      }
+    }
+  },
+  "tableWorkbook": "This file can't be read. In Excel, save it as an Excel workbook (.xlsx) without a password, or as CSV UTF-8, and choose it again.",
+  "tableTooLarge": "The file is too large for a server list (at most 10 MB).",
+  "problemBadPort": "the port is not from 1 to 65535",
+  "problemTooManyRows": "this row and those below not read: a list has at most 10,000",
+  "downloadsButton": "Downloads",
+  "downloadFolder": "Download folder",
+  "changeFolder": "Change…",
+  "showInFinder": "Show in Finder",
+  "showInExplorer": "Show in Explorer",
+  "openFile": "Open",
+  "transferProgressLeft": "{done} of {total}, {speed}/s, {left} left",
+  "transfersUnderWay": "{count, plural, one {# transfer in progress} other {# transfers in progress}}",
+  "@transfersUnderWay": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "chooseDefaultDownloadFolder": "Choose the download folder",
+  "optionsTransfers": "Transfers",
+  "optionsDownloads": "Downloads",
+  "downloadFolderNote": "Download saves files here. Download to… in the file list's menu chooses another folder for once.",
+  "downloadFolderDefault": "Use default",
+  "optionAskDownloadDir": "Ask where to save each download",
+  "optionsFileManager": "File manager",
+  "optionsFileIcons": "File icon theme",
+  "fileIconsPreview": "Preview",
+  "fileIconsBundled": "Built in",
+  "fileIconsInstalled": "Installed from VSIX",
+  "fileIconsDetected": "Installed in VS Code and similar editors",
+  "fileIconsMinimal": "Minimal",
+  "fileIconsMinimalNote": "One icon for files, one for folders",
+  "fileIconsNote": "Lists the icon themes installed in VS Code, VS Code Insiders, VSCodium, Cursor and Windsurf. A theme installed from a VSIX file is copied into the settings folder. Only the theme's icons are read; nothing in the extension runs.",
+  "installVSIX": "Install from VSIX…",
+  "installVSIXTitle": "Choose a VSIX file",
+  "vsixFiles": "VSIX packages",
+  "removeIconTheme": "Remove",
+  "removeNamedIconTheme": "Remove {name}",
+  "@removeNamedIconTheme": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeIconThemeTitle": "Remove the icon theme {name}?",
+  "@removeIconThemeTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "removeIconThemeDetail": "Its VSIX file is deleted from the settings folder.",
+  "iconThemeMissing": "The chosen icon theme is not installed any more: showing Material Icon Theme.",
+  "iconThemeUnreadable": "The chosen icon theme could not be read ({error}): showing Material Icon Theme.",
+  "@iconThemeUnreadable": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "vsixNotPackage": "This file is not a VSIX package.",
+  "vsixNoIconTheme": "This extension has no file icon theme.",
+  "vsixTooLarge": "The VSIX package is larger than 50 MB.",
+  "vsixInstallFailed": "Could not install it: {error}",
+  "@vsixInstallFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "fileIconsThemes": "Themes",
+  "newFile": "New file",
+  "openFolder": "Open",
+  "renameFileTitle": "Rename “{name}”",
+  "@renameFileTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteFileTitle": "Delete “{name}”?",
+  "@deleteFileTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "deleteFilesTitle": "{count, plural, one {Delete # item?} other {Delete # items?}}",
+  "@deleteFilesTitle": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deleteFilesBody": "{count, plural, one {It is deleted on the server. This can't be undone.} other {They are deleted on the server. This can't be undone.}}",
+  "@deleteFilesBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deleteFoldersBody": "{count, plural, one {It is deleted on the server with everything in it. This can't be undone.} other {They are deleted on the server, folders with everything in them. This can't be undone.}}",
+  "@deleteFoldersBody": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "deletingFiles": "Deleting…",
+  "badFileName": "That name can't be used.",
+  "fileNameTaken": "“{name}” already exists.",
+  "@fileNameTaken": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "optionsSync": "Sync",
+  "syncIntro": "Keep connections and settings the same on your computers, through storage you already have. Everything is encrypted on this computer with your sync password before it leaves; Finallyshell runs no server and sees nothing.",
+  "syncService": "Sync with",
+  "syncOff": "Off",
+  "syncGist": "GitHub Gist",
+  "syncWebDAV": "WebDAV",
+  "syncS3": "S3-compatible storage",
+  "syncGistToken": "Token",
+  "syncGistTokenHint": "A GitHub personal access token with the gist scope. The file goes in a secret gist of your account.",
+  "syncGistNewToken": "Create a token on GitHub",
+  "syncGistID": "Gist ID",
+  "syncGistIDPlaceholder": "Found or created automatically",
+  "syncGistIDHint": "Leave it empty: the first sync finds the gist by its file name, or creates one.",
+  "syncWebDAVURL": "Folder URL",
+  "syncUser": "User",
+  "syncWebDAVPassword": "Password",
+  "syncWebDAVPasswordHint": "Use an app password where the service has them, as Jianguoyun and Nextcloud do.",
+  "syncS3Endpoint": "Endpoint",
+  "syncS3EndpointHint": "Cloudflare R2, Backblaze B2, MinIO, AWS S3 or another S3-compatible service. For R2, set the region to auto.",
+  "syncS3Region": "Region",
+  "syncS3Bucket": "Bucket",
+  "syncS3Key": "File name",
+  "syncS3AccessKey": "Access key ID",
+  "syncS3SecretKey": "Secret access key",
+  "syncPassword": "Sync password",
+  "syncPasswordHint": "Encrypts what is synced. Use the same one on each computer. It cannot be recovered: if you forget it, replace the remote with this computer's data and a new one.",
+  "syncIncludePasswords": "Include saved passwords",
+  "syncIncludePasswordsHint": "The passwords and key passphrases kept in the system's credential store, encrypted with the rest. Private key files are not synced.",
+  "syncAutomatically": "Sync automatically",
+  "syncEveryMinutes": "{minutes, plural, one {Every # minute} other {Every # minutes}}",
+  "@syncEveryMinutes": {
+    "placeholders": {
+      "minutes": {
+        "type": "int"
+      }
+    }
+  },
+  "syncAutomaticallyHint": "At start, a minute after changes here, and at this interval for changes made elsewhere.",
+  "syncNow": "Sync Now",
+  "syncRunning": "Syncing…",
+  "syncIncomplete": "Fill in every field and the sync password to sync.",
+  "syncLastSynced": "Last synced {time}",
+  "@syncLastSynced": {
+    "placeholders": {
+      "time": {
+        "type": "String",
+        "example": "2026-11-08 14:02"
+      }
+    }
+  },
+  "syncCreated": "created the remote file",
+  "syncUploaded": "sent this computer's changes",
+  "syncDownloaded": "received changes",
+  "syncMerged": "merged changes from both sides",
+  "syncUpToDate": "already up to date",
+  "syncConflicts": "{count, plural, one {# item changed on both sides, this computer's kept} other {# items changed on both sides, this computer's kept}}",
+  "@syncConflicts": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "syncReplaceRemote": "Replace the Remote with This Computer's Data…",
+  "syncReplaceRemoteConfirm": "The remote file is replaced with this computer's connections and settings, encrypted with the sync password above. What only other computers have is lost from it, and they need the new password.",
+  "syncReplaceRemoteYes": "Replace",
+  "syncErrWrongPassword": "The sync password does not match the one the remote file was encrypted with.",
+  "syncErrAuth": "The service refused the credentials. Check the token, user, password or keys.",
+  "syncErrNotEnvelope": "The remote file is not a Finallyshell sync file.",
+  "syncErrNewerFormat": "The remote file was written by a newer version of Finallyshell. Update to sync.",
+  "syncErrTimeout": "The service did not answer in time.",
+  "syncErrOther": "Could not sync: {error}",
+  "tabNetwork": "Network",
+  "colNetListen": "Listen IP",
+  "colNetPort": "Port",
+  "colNetProto": "Protocol",
+  "colNetRemoteIPs": "Remote IPs",
+  "colNetConns": "Connections",
+  "colNetUpRate": "Upload/s",
+  "colNetDownRate": "Download/s",
+  "colNetUp": "Uploaded",
+  "colNetDown": "Downloaded",
+  "colNetLocation": "Location",
+  "colNetIP": "IP",
+  "colNetState": "State",
+  "netFilter": "Filter by name, PID, port or IP",
+  "netListFailed": "Could not read the connections: {error}",
+  "netCount": "{count, plural, one {# entry} other {# entries}}",
+  "@netCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "netCountFiltered": "{shown} of {count, plural, one {# entry} other {# entries}}",
+  "@netCountFiltered": {
+    "placeholders": {
+      "shown": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "netNeedsRoot": "Needs root for other users' processes",
+  "netOpenConns": "Open Connections",
+  "netCopyAddress": "Copy Address",
+  "netCopyIP": "Copy IP",
+  "netConnCount": "{count, plural, one {# connection} other {# connections}}",
+  "@netConnCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "netConnCountLimited": "{shown} of {count, plural, one {# connection} other {# connections}} shown",
+  "@netConnCountLimited": {
+    "placeholders": {
+      "shown": {
+        "type": "int"
+      },
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "traceRoute": "Trace Route",
+  "traceRouteTo": "Trace route",
+  "traceTab": "Trace {target}",
+  "traceAgain": "Trace Again",
+  "tracing": "Tracing…",
+  "tracingTo": "Tracing the route to {target}…",
+  "colTraceHop": "Hop",
+  "colTraceRTT": "RTT",
+  "colTraceASN": "ASN",
+  "colTraceHost": "Host name",
+  "nextTraceMissing": "NextTrace is not on the server. To install it:",
+  "nextTraceMissingFallback": "NextTrace is not on the server, so {tool} traced the route. To install it:",
+  "traceNoTool": "None of NextTrace, traceroute and tracepath is on the server.",
+  "traceFailed": "Trace route failed: {error}",
+  "tracePlaceholder": "IP address or host name",
+  "traceInvalid": "Enter an IP address or a host name.",
+  "geoAskV4": "Show where IP addresses are? This downloads about {size} of location data (ip2region).",
+  "geoAskV6": "Show where IPv6 addresses are too? This downloads about {size} more (ip2region).",
+  "geoDownload": "Download",
+  "geoNotNow": "Not Now",
+  "geoNever": "Don't Ask Again",
+  "geoDownloading": "Downloading location data… {percent}%",
+  "@geoDownloading": {
+    "placeholders": {
+      "percent": {
+        "type": "int"
+      }
+    }
+  },
+  "geoDownloadFailed": "Could not download the location data: {error}",
+  "geoChecksum": "the file is not the one expected (its checksum does not match)",
+  "geoSourceFailed": "{host}: {error}",
+  "geoSourcesSeparator": "; ",
+  "geoNoAnswer": "no answer in time",
+  "geoRefused": "connection refused",
+  "geoNoHost": "host not found",
+  "geoLAN": "LAN",
+  "geoLookUpOnline": "Look Up Online",
+  "geoCredit": "IP location data: ip2region (https://github.com/lionsoul2014/ip2region), Apache-2.0 license.",
+  "geoDeleteTitle": "Delete the downloaded location data?",
+  "geoDeleteDetail": "The ip2region files and the cache of online lookups are deleted, and IP locations are turned off. They can be downloaded again.",
+  "geoDeleteYes": "Delete",
+  "optionsNetwork": "Network monitor",
+  "optionGeoHeading": "IP locations",
+  "optionShowLocations": "Show IP locations (downloads ip2region data, about {size})",
+  "optionShowLocationsNote": "The connections in the Network tab show the country, region, city and ISP of each address. The data is downloaded once into the app's config folder and checked against the checksum the app keeps. Until it is downloaded, the tab shows addresses only and nothing is looked up.",
+  "optionLocationsV6": "Include IPv6 addresses (about {size} more)",
+  "optionGeoData": "Downloaded location data: {size}",
+  "optionGeoNoData": "No location data downloaded",
+  "geoDeleteData": "Delete Downloaded Location Data",
+  "optionGeoOnline": "Look up IP locations online (ip-api.com)",
+  "optionGeoOnlineNote": "Addresses the downloaded data has no city or ISP for are sent to ip-api.com, a third party (to ip.sb while ip-api.com is busy). The free ip-api.com service is unencrypted (HTTP) and for non-commercial use only. Answers are kept for 30 days; private and LAN addresses are never sent.",
+  "optionTraceHeading": "Trace route",
+  "optionTraceNote": "Trace Route runs NextTrace on the server (nexttrace --traceroute --raw), which locates the hops with its own service and shows each as it arrives. When NextTrace is not installed, traceroute or tracepath is used, with the downloaded location data. The app never installs anything on the server.",
+  "openPanelTab": "Open in its own tab",
+  "backToTerminal": "Back to terminal",
+  "hidePanel": "Hide panel",
+  "showPanel": "Show panel",
+  "movePanelRight": "Move panel to right side",
+  "movePanelBottom": "Move panel to bottom",
+  "moveMonitorRight": "Move to right side",
+  "moveMonitorLeft": "Move to left side",
+  "scToggleBottomPanel": "Show or hide the bottom panel",
+  "panelTabLabel": "{session} | {tab}",
+  "tabCommands": "Commands",
+  "quickAll": "All",
+  "quickNewCommand": "New command",
+  "quickEditCommand": "Edit command",
+  "quickNewGroup": "New group",
+  "quickGroupName": "Group name",
+  "quickSearch": "Search commands",
+  "quickSearchShort": "Search",
+  "quickLines": "{count, plural, one {# line} other {# lines}}",
+  "@quickLines": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "quickSend": "Send",
+  "quickPutInBar": "Put in the command bar",
+  "quickEdit": "Edit…",
+  "quickDuplicate": "Duplicate",
+  "quickMoveTo": "Move to group",
+  "quickNoGroup": "No group",
+  "quickCopyName": "{name} (copy)",
+  "@quickCopyName": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "quickDeleteTitle": "Delete the quick command “{name}”?",
+  "@quickDeleteTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "quickDeleteDetail": "This cannot be undone.",
+  "quickDeleteGroupTitle": "Delete the group “{name}”?",
+  "@quickDeleteGroupTitle": {
+    "placeholders": {
+      "name": {
+        "type": "String"
+      }
+    }
+  },
+  "quickDeleteGroupDetail": "Its commands are kept, under All.",
+  "quickNone": "No quick commands yet. New command saves one; a click on it then sends it to the session.",
+  "quickNoneInGroup": "No commands in this group. Drag one onto the group, or make a new one.",
+  "quickNoMatches": "No commands match.",
+  "quickOffline": "Connect a session to send commands.",
+  "quickFieldGroup": "Group",
+  "quickFieldCommand": "Command",
+  "quickNamePlaceholder": "The command's first line",
+  "quickEnter": "Press Enter after each line",
+  "quickEnterOn": "Every line runs, as if typed and followed by Enter.",
+  "quickEnterOff": "The last line is typed without Enter, for you to check it and press Enter yourself. The lines before it still run.",
+  "quickErrCommand": "Enter a command",
+  "quickLoadBroken": "quickcommands.json could not be read, so the list starts empty. The file was kept as {file}.",
+  "@quickLoadBroken": {
+    "placeholders": {
+      "file": {
+        "type": "String"
+      }
+    }
+  },
+  "quickLoadFailed": "quickcommands.json could not be read ({error}). Changes are not saved, so that the file is not replaced.",
+  "@quickLoadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "cmdEditor": "Command editor",
+  "cmdEditorSaveAs": "Save as command",
+  "cmdEditorClear": "Clear",
+  "cmdEditorOptions": "Options",
+  "cmdEditorOptionsLabel": "Command editor options",
+  "cmdEditorClearAfter": "Clear after sending",
+  "cmdEditorSendSelection": "Send selection",
+  "cmdEditorSendTip": "Send ({key})",
+  "@cmdEditorSendTip": {
+    "placeholders": {
+      "key": {
+        "type": "String"
+      }
+    }
+  },
+  "cmdEditorPlaceholder": "Commands to send, one per line",
+  "cmdEditorLoadFailed": "commandeditor.txt could not be read ({error}). The editor's text is not saved, so that the file is not replaced.",
+  "@cmdEditorLoadFailed": {
+    "placeholders": {
+      "error": {
+        "type": "String"
+      }
+    }
+  },
+  "sendTo": "Send to",
+  "sendToTip": "Send to: {target}",
+  "@sendToTip": {
+    "placeholders": {
+      "target": {
+        "type": "String"
+      }
+    }
+  },
+  "sendToCurrent": "Current session",
+  "sendToAll": "All sessions",
+  "sendToChoose": "Choose sessions…",
+  "sendToAllSessionsCount": "All sessions ({count})",
+  "@sendToAllSessionsCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sendToSessions": "{count, plural, one {# session} other {# sessions}}",
+  "@sendToSessions": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sendToNoSessions": "No sessions are open.",
+  "sendToConfirm": "{count, plural, one {Send to # session?} other {Send to # sessions?}}",
+  "@sendToConfirm": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "sendToConfirmNote": "Each of them runs what is sent. Later sends to the same sessions don't ask again.",
+  "localTerminal": "Local terminal",
+  "localTerminalTip": "Open a terminal on this computer",
+  "localThisComputer": "This computer",
+  "statusExited": "Exited",
+  "localNotAvailable": "Not available in a local terminal",
+  "errLocalStart": "Could not start {program}: {error}",
+  "errLocalShellQuote": "The local terminal program has a quote that is not closed: {program}",
+  "optionLocalShell": "Local terminal program",
+  "optionLocalShellDefault": "Default shell",
+  "optionLocalShellNote": "The program a local terminal runs, with its arguments, split into words as a shell does: quotes keep words together. Empty runs your login shell, or PowerShell on Windows. For example: pwsh -NoLogo, wsl.exe, /opt/homebrew/bin/fish -l. Local terminals opened after a change use it.",
+  "confirmQuitLocal": "{count, plural, one {# local terminal is open. Quitting ends its program.} other {# local terminals are open. Quitting ends their programs.}}",
+  "@confirmQuitLocal": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "splitRight": "Split right",
+  "splitDown": "Split down",
+  "zoomPane": "Zoom this pane",
+  "equalizePanes": "Equalize panes",
+  "closePane": "Close this pane",
+  "paneCount": "{count, plural, one {# pane} other {# panes}}",
+  "@paneCount": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "errPaneRefused": "The server refused another shell on this connection: it may allow no more sessions (MaxSessions).",
+  "cmdBarFocusedPane": "Sends to the focused pane",
+  "scSplitRight": "Split the pane right",
+  "scSplitDown": "Split the pane down",
+  "scZoomPane": "Zoom the focused pane, or show all panes",
+  "scFocusPaneLeft": "Focus the pane on the left",
+  "scFocusPaneRight": "Focus the pane on the right",
+  "scFocusPaneUp": "Focus the pane above",
+  "scFocusPaneDown": "Focus the pane below",
+  "shortcutShellAltWarn": "Shells read Alt with this key too (as Meta): it no longer reaches them while it does this.",
+  "movePane": "Move pane",
+  "movePaneLeft": "Swap with the pane on the left",
+  "movePaneRight": "Swap with the pane on the right",
+  "movePaneUp": "Swap with the pane above",
+  "movePaneDown": "Swap with the pane below",
+  "scMovePaneLeft": "Swap the pane with the one on the left",
+  "scMovePaneRight": "Swap the pane with the one on the right",
+  "scMovePaneUp": "Swap the pane with the one above",
+  "scMovePaneDown": "Swap the pane with the one below",
+  "paneGrip": "Drag to move this pane",
+  "dropZoneLeft": "Left",
+  "dropZoneRight": "Right",
+  "dropZoneUp": "Top",
+  "dropZoneDown": "Bottom",
+  "dropOnLeft": "Drop on the left",
+  "dropOnRight": "Drop on the right",
+  "dropOnUp": "Drop above",
+  "dropOnDown": "Drop below",
+  "cmdBarSplit": "Split",
+  "authAgent": "SSH agent",
+  "fieldAgent": "SSH agent",
+  "agentUsesOptions": "Uses the address in Options › General",
+  "agentCheck": "Check",
+  "agentCheckLabel": "Check the SSH agent",
+  "agentChecking": "Checking the agent…",
+  "agentConnectedNamed": "{count, plural, one {Connected to {agent}'s agent, which has # key:} other {Connected to {agent}'s agent, which has # keys:}}",
+  "@agentConnectedNamed": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "agentConnectedAt": "{count, plural, one {Connected to the agent at {addr}, which has # key:} other {Connected to the agent at {addr}, which has # keys:}}",
+  "@agentConnectedAt": {
+    "placeholders": {
+      "count": {
+        "type": "int"
+      }
+    }
+  },
+  "agentTriedInTurn": "Connecting tries them in turn until the server accepts one.",
+  "agentEditorNote": "With SSH agent, no key file, passphrase or “Remember password” is needed. Agents such as Bitwarden ask you to approve each signature; the connection waits for you.",
+  "optionSSHAgent": "SSH agent address",
+  "optionSSHAgentDefault": "Default: {addr}",
+  "optionSSHAgentNote": "Empty uses the default: the SSH_AUTH_SOCK environment variable on macOS and Linux, OpenSSH's agent on Windows. For Bitwarden or 1Password, enter their own address:",
+  "agentTableApp": "App",
+  "agentTableAddress": "Address",
+  "agentWindowsAddr": "{addr} (Bitwarden uses it too)",
+  "optionThisComputerOnly": "Only for this computer: not synced.",
+  "agentSettings": "SSH agent settings",
+  "errAgentNotFound": "No SSH agent at {addr}: {error}",
+  "errAgentNoAddress": "No SSH agent: SSH_AUTH_SOCK is not set. Enter the agent's address in Options › General.",
+  "errAgentNoKeys": "The SSH agent at {addr} has no keys",
+  "errAgentRefused": "The server refused every key in the SSH agent",
+  "errAgentSign": "The SSH agent did not sign the login (denied, or it failed): {error}",
+  "toolbarSession": "Session",
+  "toolbarLocal": "Terminal",
+  "toolbarSFTP": "SFTP",
+  "toolbarMonitor": "Monitor",
+  "toolbarMultiExec": "MultiExec",
+  "toolbarMultiExecTip": "Send commands to multiple terminals",
+  "toolbarSidebar": "Sidebar",
+  "toolbarToggleSidebar": "Toggle sidebar",
+  "sidebarSessions": "Sessions",
+  "sidebarSFTP": "SFTP",
+  "sidebarMonitor": "Monitor",
+  "sidebarCommands": "Macros",
+  "sidebarOpenFullFiles": "Open full file manager",
+  "sidebarOpenFullCommands": "Open command editor",
+  "sftpConnectPrompt": "Connect to an SSH server to browse remote files.",
+  "statusReady": "Ready",
+  "statusHome": "Home",
+  "statusBottomPanel": "Tools panel",
+  "statusMonitorBar": "Remote monitor",
+  "netUpload": "Upload",
+  "netDownload": "Download",
+  "hideIP": "Hide IP address",
+  "showIP": "Show IP address",
+  "importSessions": "Import",
+  "startWelcomeSubtitle": "All-in-one SSH client, SFTP browser, and server monitor.",
+  "fullScreen": "Full screen",
+  "exitFullScreen": "Exit full screen",
+  "terminalSyntaxHighlight": "Syntax highlighting",
+  "optionSyntaxHighlight": "Highlight keywords in terminal output",
+  "optionSyntaxHighlightNote": "Automatically colors IPs, URLs, and success, warning, error and info keywords in uncolored terminal output (as MobaXterm does). Skips colored output and full-screen programs such as vim and htop."
+}

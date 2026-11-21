@@ -1,0 +1,115 @@
+name: release
+
+# Pushing main to the production branch releases it:
+#
+#   git push origin origin/main:production
+#
+# The newest section of CHANGELOG.md is the version and its release notes
+# (tools/release). When that version is already tagged there is nothing to
+# release and the run stops after the version job; a section older than
+# the last tag, or not in English and Simplified Chinese, fails that job,
+# before anything is built.
+on:
+  push:
+    branches: [production]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# One release at a time, never cancelled, so two pushes can't race for a tag.
+concurrency:
+  group: release
+  cancel-in-progress: false
+
+jobs:
+  version:
+    if: github.ref == 'refs/heads/production'
+    runs-on: ubuntu-latest
+    outputs:
+      version: ${{ steps.next.outputs.version }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+      - id: next
+        # Prints the version, or nothing, and says why on stderr; it warns
+        # when the version is lower than the commit types since the last
+        # tag call for (0.2.1 after feat commits), and goes on.
+        run: |
+          version=$(go run ./tools/release version)
+          echo "version=$version" >> "$GITHUB_OUTPUT"
+
+  gate:
+    needs: version
+    if: needs.version.outputs.version != ''
+    uses: ./.github/workflows/ci.yml
+
+  # The five platforms (.github/workflows/build.yml, which previews use
+  # too). Signed: each build fails without the secret key, and checks its
+  # update manifest and the files it names before uploading them.
+  build:
+    needs: [version, gate]
+    uses: ./.github/workflows/build.yml
+    with:
+      version: ${{ needs.version.outputs.version }}
+      sign: true
+    secrets:
+      MYGO_UPDATER_PRIVATE_KEY: ${{ secrets.MYGO_UPDATER_PRIVATE_KEY }}
+
+  release:
+    needs: [version, build]
+    runs-on: ubuntu-latest
+    permissions:
+      contents: write
+    env:
+      VERSION: ${{ needs.version.outputs.version }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - uses: actions/checkout@v7
+        with:
+          fetch-depth: 0
+      - uses: actions/setup-go@v7
+        with:
+          go-version-file: go.mod
+      - uses: actions/download-artifact@v8
+        with:
+          path: upload
+          merge-multiple: true
+      - name: Check the updates
+        # Apps read the manifests of the latest release: one missing strands
+        # that platform's installed copies at their version.
+        run: |
+          for p in darwin-arm64 darwin-amd64 linux-amd64 linux-arm64 windows-amd64; do
+            if [ ! -f "upload/update-$p.json" ]; then
+              echo "::error::update-$p.json is missing: installed apps could not update to this release"
+              exit 1
+            fi
+          done
+      - name: Licenses and checksums
+        run: |
+          cp LICENSE upload/LICENSE.txt
+          go run ./tools/release licenses > upload/THIRD_PARTY_LICENSES.txt
+          (cd upload && sha256sum * > SHA256SUMS)
+          cat upload/SHA256SUMS
+      - name: Release notes
+        # The version's section of CHANGELOG.md, in both languages, then
+        # how to install, in both too.
+        run: |
+          {
+            go run ./tools/release notes "$VERSION"
+            echo
+            cat .github/release-install.md
+          } > notes.md
+      - name: Publish
+        # Published, not a draft: apps read the update manifests from the
+        # latest release. gh keeps the release a draft while it uploads the
+        # files, so apps never see a manifest whose archive is not there.
+        run: |
+          gh release create "v$VERSION" upload/* \
+            --target "$GITHUB_SHA" \
+            --title "v$VERSION" \
+            --notes-file notes.md

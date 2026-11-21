@@ -1,0 +1,144 @@
+package app
+
+import (
+	"runtime"
+	"slices"
+
+	"github.com/egoist/mygo/ui"
+)
+
+// WindowKind names a secondary window: a dialog such as the options,
+// which FinalShell opens in a window of its own. The app keeps at most one
+// window of each kind open; opening it again brings it to the front.
+type WindowKind string
+
+// The secondary windows.
+const (
+	WindowOptions WindowKind = "options"
+)
+
+// WindowMain is the main window, as a Parent and for FocusWindow.
+const WindowMain WindowKind = ""
+
+// WindowSpec says how a secondary window opens.
+type WindowSpec struct {
+	Kind WindowKind
+	// Title is the text of the title bar, from locales: the platform asks
+	// it again when the language changes.
+	Title func() string
+	// Width and Height are the size the window's view opens at, without
+	// the title bar; MinWidth and MinHeight the least the user can make
+	// the window, 0 for no limit. A window never opens smaller than its
+	// least size.
+	Width, Height       int
+	MinWidth, MinHeight int
+	// Parent is the window this one belongs to: it stays above it and
+	// closes with it. "" is the main window, as is a kind that is not
+	// open.
+	Parent WindowKind
+	// Modal blocks the parent until this window closes. On macOS the
+	// window is then a sheet of its parent, which has no title bar: the
+	// view shows Title as a heading instead.
+	Modal bool
+	// OwnKeys leaves Escape and Cmd+W to the view, which closes the
+	// window itself, as the file editor closes a tab with Cmd+W.
+	OwnKeys bool
+	// CloseRequested, when set, is asked as the user closes the window
+	// with the system's close button: false keeps it open, as when the
+	// window asks first. Closing it from the app does not ask.
+	CloseRequested func() bool
+	// Closed, when set, is called once the window is gone.
+	Closed func()
+}
+
+// macOS tells whether the app runs on macOS, where Cmd+W closes a
+// secondary window; tests set it.
+var macOS = runtime.GOOS == "darwin"
+
+// closeWindowShortcut tells whether the key that closes a secondary
+// window on macOS was pressed in it, as in every Mac app: Cmd+W, and the
+// key of closing a tab when the user moved it. The app's menu bar has no
+// File menu, whose Close Window would take Cmd+W (see main.go), so the
+// window takes it. Elsewhere Escape and the system close it.
+func (a *App) closeWindowShortcut(c *ui.Context) bool {
+	if !macOS {
+		return false
+	}
+	closeTab := a.shortcut(scCloseTab)
+	return c.Shortcut(ui.Super, ui.KeyW) ||
+		!closeTab.none() && closeTab != (keyCombo{ui.Super, ui.KeyW}) && c.Shortcut(closeTab.Mods, closeTab.Key)
+}
+
+// sheets tells whether a modal window is a sheet of its parent, without a
+// title bar, as on macOS.
+var sheets = runtime.GOOS == "darwin"
+
+// openWindow opens the window of spec.Kind showing view, or brings it to
+// the front when it is open already. The view is the window's alone: it
+// has the app's theme, and Escape closes the window unless something in
+// it takes the key first.
+func (a *App) openWindow(spec WindowSpec, view func(c *ui.Context)) {
+	if a.windows[spec.Kind] {
+		a.plat.FocusWindow(spec.Kind)
+		return
+	}
+	if spec.Parent != "" && !a.windows[spec.Parent] {
+		spec.Parent = ""
+	}
+	spec.Width, spec.Height = max(spec.Width, spec.MinWidth), max(spec.Height, spec.MinHeight)
+	a.windows[spec.Kind] = true
+	kind, title, sheet, ownKeys, closed := spec.Kind, spec.Title, spec.Modal && sheets, spec.OwnKeys, spec.Closed
+	a.plat.OpenWindow(spec, func(c *ui.Context) {
+		useTheme(c)
+		if !ownKeys && (c.Shortcut(0, ui.KeyEscape) || a.closeWindowShortcut(c)) {
+			a.closeWindow(kind)
+		}
+		if !sheet {
+			view(c)
+			return
+		}
+		ui.Column(c).Fill().Children(func() {
+			ui.Text(c, title()).Bold().TextAlign(ui.Center).Padding(10, 16, 2, 16).Shrink(0)
+			ui.Column(c).Grow(1).MinHeight(0).Children(func() { view(c) })
+		})
+	}, func() {
+		delete(a.windows, kind)
+		if closed != nil {
+			closed()
+		}
+	})
+}
+
+// closeWindow closes the window of kind, as its Close button does.
+func (a *App) closeWindow(kind WindowKind) {
+	if a.windows[kind] {
+		a.plat.CloseWindow(kind)
+	}
+}
+
+// windowOpen tells whether the window of kind is open.
+func (a *App) windowOpen(kind WindowKind) bool { return a.windows[kind] }
+
+// closeWindows closes every secondary window, as the main one hides to
+// the tray, but the file editor's while it has changes to save, unless
+// the app quits. A parent takes its children with it, so the order does
+// not matter.
+func (a *App) closeWindows() {
+	kinds := make([]WindowKind, 0, len(a.windows))
+	for k := range a.windows {
+		if k == WindowFileEditor && !a.quitApproved && !a.fe.discard && a.unsavedFiles() > 0 {
+			continue
+		}
+		kinds = append(kinds, k)
+	}
+	slices.Sort(kinds)
+	for _, k := range kinds {
+		a.closeWindow(k)
+	}
+}
+
+// redraw builds every open window again. A window's view redraws itself
+// after its own input; a change it makes to state that other windows
+// show, as a saved host or a setting, calls redraw so they show it too.
+// Work posted with App.post redraws them all on its own.
+func (a *App) redraw() { a.plat.Redraw() }

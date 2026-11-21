@@ -1,0 +1,12 @@
+{
+  "name": "Finallyshell",
+  "identifier": "dev.finallyshell.app",
+  "icon": "resources/icon.png",
+  "version": "0.2.0",
+  "out": "build",
+  "i18n": { "dir": "locales", "source": "en" },
+  "updates": {
+    "publicKey": "CjznGnZn6Gcko4N8e80pBgWS0eVcsG02qbeeBiEdVy0=",
+    "github": "SUYUEM/finallyshell"
+  }
+}
